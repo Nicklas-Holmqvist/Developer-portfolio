@@ -22,7 +22,7 @@ function changeBackgroundColor() {
 
     // Change the backgroundcolor at specific hours.
     if (theHour <= 6 || theHour >= 18) {
-        changeBackground.style.background = "#000000";
+        changeBackground.style.background = "#141414";
     }
     else {
         changeBackground.style.background = "#FFFFFF";
