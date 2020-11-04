@@ -4,6 +4,8 @@
 /* font-family: 'Noto Sans JP', sans-serif; */
 /* Stilig font */
 /* font-family: 'Cormorant Garamond', serif; */
+/* Mjuk font */
+/* font-family: 'Be Vietnam', sans-serif; */
 
 /* Nightmode
 #141414
@@ -12,19 +14,21 @@
 #90A2A2
 #EFEFEF */
 
-/* Daymode -- INTE VALDA FÄRGER ÄN
-#141414
-#3E4251
-#807D8C
-#90A2A2
-#EFEFEF */
+root {
 
+}
 
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.max-width {
+    max-width: 75rem;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .flex {
@@ -68,7 +72,69 @@
     align-items: center;
 }
 
+.flex-1 {
+    flex: 1;
+}
+
+.flex-end {
+    justify-content: flex-end;
+}
+
+.self-end {
+    justify-self: flex-end;
+}
+
 .text-center {
     text-align: center;
 }
+
+ul {
+    list-style: none;
+    height: 3rem;
+    width: 70%;
+    margin: 0 auto;
+}
+
+li {
+
+}
+
+h1, h2, h3, h4, p, li {
+    font-family: 'Be Vietnam', sans-serif;
+    color: #3e4251;
+}
+
+i {
+    padding-left: .8rem;
+    color: #3e4251;
+}
+
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    padding: 0 2rem;
+
+    background: #fdfdfd;
+    box-shadow: 1px 1px 5px #3e425155,
+                1px 1px 2px #FFFFFF22;
+}
+
+.nav-header {
+    padding: 1rem 0;
+}
+
+img {
+    height: 3rem;
+    width: 3rem;
+}
+
+nav {
+    height: 3rem;
+}
+
+
 
