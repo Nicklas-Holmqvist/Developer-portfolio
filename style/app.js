@@ -32,7 +32,6 @@ function changeBackgroundColor() {
         changeHeroImages.style.backgroundImage = "url('./style/img/hero-background-dark.png')";
         listItemDark();
         changeLogo.src = "./style/img/logo-darkmode.png"
-        iconDark();
         changeMark.style.color = "var(--darkgrey)";
         changeMark.style.background = "var(--white)";
         changeH1.style.color = "var(--white)";
@@ -42,25 +41,32 @@ function changeBackgroundColor() {
     }
     else {
         changeBackground.style.background = "var(--white)";
+        changeHeroImages.style.backgroundImage = "url('./style/img/hero-background-day.png')";
+        changeLogo.src = "./style/img/logo-daymode.png"
+        changeMark.style.color = "var(--white)";
+        changeMark.style.background = "var(--darkgrey)";
+        changeH1.style.color = "var(--darkgrey)";
+        listItemDay();
+        btnDay()
     }
 }
 
 
 function listItemDark() {
- const getParagraphs = document.querySelectorAll("li");
- console.log(getParagraphs);
+ const getDarkClass = document.querySelectorAll(".dark");
+ console.log(getDarkClass);
 
- getParagraphs.forEach((e) => {
+ getDarkClass.forEach((e) => {
      e.style.color = "var(--white)";
  });
 }
 
-function iconDark() {
- const getIcons = document.querySelectorAll("i");
- console.log(getIcons);
+function listItemDay() {
+ const getDay = document.querySelectorAll(".dark");
+ console.log(getDay);
 
- getIcons.forEach((e) => {
-     e.style.color = "var(--white)";
+ getDay.forEach((e) => {
+     e.style.color = "var(--middlegrey)";
  });
 }
 
@@ -70,7 +76,16 @@ function btnDark() {
 
  getBtn.forEach((e) => {
      e.style.color = "var(--white)";
-     e.style.borderColor = "var(--white)";
+     e.style.borderColor = "var(--beige)";
+ });
+}
 
+function btnDay() {
+ const getBtn = document.querySelectorAll(".btn");
+ console.log(getBtn);
+
+ getBtn.forEach((e) => {
+     e.style.color = "var(--middlegrey)";
+     e.style.borderColor = "var(--darkgrey)";
  });
 }
