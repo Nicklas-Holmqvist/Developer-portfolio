@@ -6,8 +6,10 @@ window.onload = main;
 let changeBackground = document.querySelector('body');
 const changeHeroImages = document.querySelector('.hero-section');
 const changeLogo = document.querySelector('.logo > img');
+const changeMark = document.querySelector('mark');
+const changeH1 = document.querySelector('H1');
 
-console.log(changeLogo);
+console.log(changeMark);
 
 /** An collectionfunction that starts at window.onload  */
 function main() {
@@ -26,23 +28,49 @@ function changeBackgroundColor() {
 
     // Change the backgroundcolor at specific hours.
     if (theHour <= 6 || theHour >= 18) {
-        changeBackground.style.background = "#141414";
+        changeBackground.style.background = "var(--darkgrey)";
         changeHeroImages.style.backgroundImage = "url('./style/img/hero-background-dark.png')";
-        paragraphDark();
+        listItemDark();
         changeLogo.src = "./style/img/logo-darkmode.png"
+        iconDark();
+        changeMark.style.color = "var(--darkgrey)";
+        changeMark.style.background = "var(--white)";
+        changeH1.style.color = "var(--white)";
+        btnDark()
+
 
     }
     else {
-        changeBackground.style.background = "#FFFFFF";
+        changeBackground.style.background = "var(--white)";
     }
 }
 
 
-function paragraphDark() {
+function listItemDark() {
  const getParagraphs = document.querySelectorAll("li");
  console.log(getParagraphs);
 
  getParagraphs.forEach((e) => {
-     e.style.color = "white";
+     e.style.color = "var(--white)";
+ });
+}
+
+function iconDark() {
+ const getIcons = document.querySelectorAll("i");
+ console.log(getIcons);
+
+ getIcons.forEach((e) => {
+     e.style.color = "var(--white)";
+ });
+}
+
+function btnDark() {
+ const getBtn = document.querySelectorAll(".btn");
+ console.log(getBtn);
+
+ getBtn.forEach((e) => {
+     e.style.color = "var(--white)";
+     e.style.borderColor = "var(--white)";
+
  });
 }
