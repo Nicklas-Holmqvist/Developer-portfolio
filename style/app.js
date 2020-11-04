@@ -4,6 +4,10 @@ window.onload = main;
 
 /** Varibles for the global scope */
 let changeBackground = document.querySelector('body');
+const changeHeroImages = document.querySelector('.hero-section');
+const changeLogo = document.querySelector('.logo > img');
+
+console.log(changeLogo);
 
 /** An collectionfunction that starts at window.onload  */
 function main() {
@@ -23,8 +27,22 @@ function changeBackgroundColor() {
     // Change the backgroundcolor at specific hours.
     if (theHour <= 6 || theHour >= 18) {
         changeBackground.style.background = "#141414";
+        changeHeroImages.style.backgroundImage = "url('./style/img/hero-background-dark.png')";
+        paragraphDark();
+        changeLogo.src = "./style/img/logo-darkmode.png"
+
     }
     else {
         changeBackground.style.background = "#FFFFFF";
     }
+}
+
+
+function paragraphDark() {
+ const getParagraphs = document.querySelectorAll("li");
+ console.log(getParagraphs);
+
+ getParagraphs.forEach((e) => {
+     e.style.color = "white";
+ });
 }
