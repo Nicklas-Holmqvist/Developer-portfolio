@@ -9,6 +9,7 @@ const changeLogo = document.querySelector('.logo > img');
 const changeMark = document.querySelector('mark');
 const changeH1 = document.querySelector('H1');
 const getBtnOne = document.querySelector('.hero-btn-one');
+const getParagraph = document.querySelectorAll('body > p');
 
 console.log(changeMark);
 
@@ -103,3 +104,4 @@ function changeBtnOneDay() {
     getBtnOne.style.background = "var(--middlegrey)";
     getBtnOne.style.borderColor = "var(--beige)";
 }
+

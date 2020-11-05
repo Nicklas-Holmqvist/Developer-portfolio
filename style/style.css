@@ -228,6 +228,18 @@ nav {
     height: 60rem;
 }
 
+.what-makes-a-good-page-section {
+    max-width: 45rem;
+    width: 100%;
+
+    padding: 4rem 0;
+    margin: 0 auto;
+}
+
+.what-makes-a-good-page-section p {
+    padding: .3rem 0;
+}
+
 .about-section {
     max-width: 45rem;
     width: 100%;
@@ -237,7 +249,7 @@ nav {
 }
 
 .about-section p {
-    padding: .5rem 0;
+    padding: .3rem 0;
 }
 
 footer {
