@@ -109,6 +109,8 @@ ul {
 li {
     font-weight: 500;
     font-size: 1rem;
+
+    transition: all .5s ease;
 }
 
 a {
@@ -116,6 +118,8 @@ a {
     color: inherit;
 
     text-align: center;
+
+    transition: all .5s ease;
 }
 
 h1, h2, h3, h4, p, li, a, i {
@@ -127,26 +131,36 @@ h1 {
     font-weight: 400;
     font-size: 3rem;
     padding-bottom: .5rem;
+
+    transition: all .5s ease;
 }
 
 h2 {
     padding-bottom: 1rem;
+
+    transition: all .5s ease;
 }
 
 h3 {
     font-weight: 400;
     color: var(--beige);
+
+    transition: all .5s ease;
 }
 
 i {
     font-size: 1.1rem;
-    padding-left: .8rem;
+    padding-left: 1.2rem;
+
+    transition: all .5s ease;
 }
 
 .btn {
     border: 2px var(--middlegrey) solid;
     border-radius: 3px;
     padding: .5rem 2rem .7rem 2rem;
+
+    transition: all .5s ease;
 }
 
 header {
@@ -171,6 +185,8 @@ header {
 img {
     height: 3rem;
     width: 3rem;
+
+    transition: all .5s ease;
 }
 
 nav {
@@ -182,12 +198,16 @@ nav {
     background-image: url(./img/hero-background.png);
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    transition: background-image .5s ease;
 }
 
 .hero-text-container {
     justify-content: center;
     width: 100%;
-    /* padding-right: 2rem; */
+    padding-bottom: 8rem;
     text-align: end;
 }
 
@@ -197,8 +217,8 @@ nav {
 
 .hero-btn-one {
     margin-right: 1.5rem;
-    color: var(--white);
-    background: var(--middlegrey);
+    color: var(--darkgrey);
+    background: var(--white);
 }
 
 .hero-btn-two {

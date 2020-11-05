@@ -8,6 +8,7 @@ const changeHeroImages = document.querySelector('.hero-section');
 const changeLogo = document.querySelector('.logo > img');
 const changeMark = document.querySelector('mark');
 const changeH1 = document.querySelector('H1');
+const getBtnOne = document.querySelector('.hero-btn-one');
 
 console.log(changeMark);
 
@@ -15,7 +16,7 @@ console.log(changeMark);
 function main() {
 
     // Change the backgroundcolor of the page.
-    changeBackgroundColor();
+    setInterval(changeBackgroundColor, 1000);
 }
 
 /** Change colors of the page when the evening begins and change back at the morning.
@@ -27,7 +28,7 @@ function changeBackgroundColor() {
     const theHour = new Date().getHours();
 
     // Change the backgroundcolor at specific hours.
-    if (theHour <= 6 || theHour >= 18) {
+    if (theHour <= 7 || theHour >= 18) {
         changeBackground.style.background = "var(--darkgrey)";
         changeHeroImages.style.backgroundImage = "url('./style/img/hero-background-dark.png')";
         listItemDark();
@@ -36,6 +37,7 @@ function changeBackgroundColor() {
         changeMark.style.background = "var(--white)";
         changeH1.style.color = "var(--white)";
         btnDark()
+        changeBtnOneDark();
 
 
     }
@@ -48,6 +50,7 @@ function changeBackgroundColor() {
         changeH1.style.color = "var(--darkgrey)";
         listItemDay();
         btnDay()
+        changeBtnOneDay()
     }
 }
 
@@ -88,4 +91,14 @@ function btnDay() {
      e.style.color = "var(--middlegrey)";
      e.style.borderColor = "var(--darkgrey)";
  });
+}
+
+function changeBtnOneDark() {
+    getBtnOne.style.color = "var(--white)";
+    getBtnOne.style.background = "var(--middlegrey)";
+}
+
+function changeBtnOneDay() {
+    getBtnOne.style.color = "var(--white)";
+    getBtnOne.style.background = "var(--middlegrey)";
 }
