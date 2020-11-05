@@ -1,0 +1,29 @@
+@media (max-width: 48em) {
+
+    .hamburger {
+        display: flex;
+        z-index: 50;
+    }
+
+    .hamburger:hover {
+        height: 3rem;
+        transform: rotate(90deg);
+        border: .5px var(--white) solid;
+        border-radius: 15rem;
+        overflow: hidden;
+    }
+    
+
+    .logo {
+        text-align: center;
+    }
+
+   nav {
+       display: none;
+   } 
+
+   .social-header {
+       display: none;
+   }
+
+}

@@ -6,6 +6,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/mobile.css">
 
     <!-- Script -->
     <script defer src="./style/app.js"></script>
@@ -28,11 +29,16 @@
 <body class="">
     <header class="">
         <div class="nav-header max-width flex row between center">
+            <div class="hamburger flex column evenly no-desktop">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            </div>
             <div class="logo flex-1">
                 <img class="text-align" src="./style/img/logo-daymode.png" alt="">
             </div>    
             <nav class="flex-2">
-                <ul class="flex row between align-center">
+                <ul class="flex row between align-center ul-desktop">
                     <li class="day dark">Hem</li>
                     <li class="day dark">Portfolio</li>
                     <li class="day dark">Om mig</li>
@@ -40,6 +46,21 @@
                 </ul>
             </nav>   
             <div class="social-header flex flex-1 flex-end">
+                <i class="fas fa-mobile-alt day dark"></i>
+                <i class="fas fa-envelope day dark"></i>
+                <i class="fab fa-instagram-square day dark"></i>
+            </div> 
+        </div>
+
+        <!-- Hamburger menu -->
+        <div class="nav-mobile no-desktop dark day flex column center">
+            <ul class="flex column ul-mobile">
+                <li class="day dark">Hem</li>
+                <li class="day dark">Portfolio</li>
+                <li class="day dark">Om mig</li>
+                <li class="day dark">Kontakta</li>
+            </ul>
+            <div class="mobile-social-header">
                 <i class="fas fa-mobile-alt day dark"></i>
                 <i class="fas fa-envelope day dark"></i>
                 <i class="fab fa-instagram-square day dark"></i>

@@ -21,6 +21,10 @@
     box-sizing: border-box;
 }
 
+.no-desktop {
+    display: none;
+}
+
 .max-width {
     max-width: 75rem;
     width: 100%;
@@ -92,16 +96,27 @@
     text-align: center;
 }
 
-ul {
+.ul-desktop {
     list-style: none;
     height: 2rem;
     width: 90%;
     margin: 0 auto;
 }
 
-li {
+.ul-mobile {
+    list-style: none;
+}
+
+.ul-desktop li {
     font-weight: 500;
     font-size: 1rem;
+
+    transition: all .5s ease;
+}
+
+.ul-mobile li {
+    font-weight: 400;
+    font-size: 1.5rem;
 
     transition: all .5s ease;
 }
@@ -141,9 +156,17 @@ h3 {
     transition: all .5s ease;
 }
 
-i {
+.nav-header i {
     font-size: 1.1rem;
     padding-left: 1.2rem;
+
+    transition: all .5s ease;
+}
+
+.nav-mobile i {
+    font-size: 1.1rem;
+    margin-top: 2rem;
+    padding: .5rem;
 
     transition: all .5s ease;
 }
@@ -184,6 +207,39 @@ img {
 
 nav {
     height: 2rem;
+}
+
+.hamburger {
+    display: none;
+    position: absolute;
+    height: 3rem;
+    width: 3rem;
+    padding: .5rem;
+
+    transition: all .3s ease;
+
+    cursor: pointer;
+}
+
+.hamburger-line {
+    height: 2px;
+    background: var(--white);  
+}
+
+
+.nav-mobile {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background-color:  #3e4251ee;
 }
 
 .hero-section {

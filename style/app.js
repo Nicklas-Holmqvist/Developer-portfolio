@@ -11,13 +11,19 @@ const changeH1 = document.querySelector('H1');
 const getBtnOne = document.querySelector('.hero-btn-one');
 const getParagraph = document.querySelectorAll('body > p');
 
+const getHamburgerButton = document.querySelector('.hamburger');
+const openMenu = document.querySelector('.nav-mobile');
+
+openMenu.style.transform = 'translateY(-100%)';
+getHamburgerButton.onclick = openHamburger;
+
 console.log(changeMark);
 
 /** An collectionfunction that starts at window.onload  */
 function main() {
 
     // Change the backgroundcolor of the page.
-    setInterval(changeBackgroundColor, 1000);
+    // setInterval(changeBackgroundColor, 1000);
 }
 
 /** Change colors of the page when the evening begins and change back at the morning.
@@ -103,5 +109,20 @@ function changeBtnOneDay() {
     getBtnOne.style.color = "var(--white)";
     getBtnOne.style.background = "var(--middlegrey)";
     getBtnOne.style.borderColor = "var(--beige)";
+}
+
+function openHamburger() {
+    if (openMenu.style.transform = "translateY(-100%)") {
+    openMenu.style.transform = "translateY(0%)";
+        getHamburgerButton.height = '3rem';
+        getHamburgerButton.transform = 'rotate(90deg)';
+        getHamburgerButton.border = '.5px var(--white) solid';
+        getHamburgerButton.borderRadius = '15rem';
+        getHamburgerButton.overflow = 'hidden';
+    }
+    else if (openMenu.style.transform = "translateY(0%)") {
+        openMenu.style.transform = "translateY(-100%)";
+    }
+
 }
 
