@@ -28,7 +28,7 @@ function changeBackgroundColor() {
     const theHour = new Date().getHours();
 
     // Change the backgroundcolor at specific hours.
-    if (theHour <= 7 || theHour >= 18) {
+    if (theHour <= 7 || theHour >= 17) {
         changeBackground.style.background = "var(--darkgrey)";
         changeHeroImages.style.backgroundImage = "url('./style/img/hero-background-dark.png')";
         listItemDark();
@@ -101,4 +101,5 @@ function changeBtnOneDark() {
 function changeBtnOneDay() {
     getBtnOne.style.color = "var(--white)";
     getBtnOne.style.background = "var(--middlegrey)";
+    getBtnOne.style.borderColor = "var(--beige)";
 }
