@@ -14,16 +14,18 @@ const getParagraph = document.querySelectorAll('body > p');
 const getHamburgerButton = document.querySelector('.hamburger');
 const openMenu = document.querySelector('.nav-mobile');
 
-openMenu.style.transform = 'translateY(-100%)';
-getHamburgerButton.onclick = openHamburger;
 
+getHamburgerButton.addEventListener('click', openHamburger);
 console.log(changeMark);
+
+console.log(openHamburger);
 
 /** An collectionfunction that starts at window.onload  */
 function main() {
 
     // Change the backgroundcolor of the page.
-    // setInterval(changeBackgroundColor, 1000);
+    setInterval(changeBackgroundColor, 60000);
+    changeBackgroundColor()
 }
 
 /** Change colors of the page when the evening begins and change back at the morning.
@@ -112,17 +114,7 @@ function changeBtnOneDay() {
 }
 
 function openHamburger() {
-    if (openMenu.style.transform = "translateY(-100%)") {
-    openMenu.style.transform = "translateY(0%)";
-        getHamburgerButton.height = '3rem';
-        getHamburgerButton.transform = 'rotate(90deg)';
-        getHamburgerButton.border = '.5px var(--white) solid';
-        getHamburgerButton.borderRadius = '15rem';
-        getHamburgerButton.overflow = 'hidden';
-    }
-    else if (openMenu.style.transform = "translateY(0%)") {
-        openMenu.style.transform = "translateY(-100%)";
-    }
-
+    openMenu.classList.toggle("hamburger-open"); 
 }
+
 

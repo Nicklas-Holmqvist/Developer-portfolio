@@ -1,8 +1,11 @@
 @media (max-width: 48em) {
+    
+    .nav-mobile {
+        display: flex;
+    }
 
     .hamburger {
         display: flex;
-        z-index: 50;
     }
 
     .hamburger:hover {

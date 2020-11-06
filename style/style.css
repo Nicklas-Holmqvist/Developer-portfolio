@@ -163,14 +163,6 @@ h3 {
     transition: all .5s ease;
 }
 
-.nav-mobile i {
-    font-size: 1.1rem;
-    margin-top: 2rem;
-    padding: .5rem;
-
-    transition: all .5s ease;
-}
-
 .btn {
     border: 2px var(--middlegrey) solid;
     border-radius: 3px;
@@ -184,8 +176,6 @@ header {
     top: 0;
     left: 0;
     right: 0;
-
-    padding: 0 2rem;
 }
 
 .header-scroll {
@@ -215,10 +205,13 @@ nav {
     height: 3rem;
     width: 3rem;
     padding: .5rem;
+    margin-left: 2rem;
 
     transition: all .3s ease;
 
     cursor: pointer;
+
+    z-index: 50;
 }
 
 .hamburger-line {
@@ -229,17 +222,31 @@ nav {
 
 .nav-mobile {
     position: fixed;
-
     top: 0;
-    left: 0;
-    right: 0;
     bottom: 0;
+    left: -100%;   
+    display: none; 
 
     justify-content: center;
 
     text-align: center;
 
     background-color:  #3e4251ee;
+
+    transition: all .5s ease;
+}
+
+.hamburger-open {
+    left: 0;
+    width: 100%
+}
+
+.nav-mobile i {
+    font-size: 1.1rem;
+    margin-top: 2rem;
+    padding: .5rem;
+
+    transition: all .5s ease;
 }
 
 .hero-section {
