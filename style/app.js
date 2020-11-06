@@ -117,4 +117,30 @@ function openHamburger() {
     openMenu.classList.toggle("hamburger-open"); 
 }
 
+const getHeaderForBackground = document.querySelector('#header');
+const getHeroSection = document.querySelector('.hero-section');
+
+
+const options = {
+    rootMargin: "-250px"
+};
+
+const heroSectionObserver = new IntersectionObserver
+(function(
+    entries, 
+    heroSectionObserver
+    ) {
+    entries.forEach(change => {
+        if (!change.isIntersecting) {
+            console.log("lägg till");
+            getHeaderForBackground.classList.add("header-scroll");
+        } 
+        else {
+            getHeaderForBackground.classList.remove("header-scroll");
+        }        
+    });
+},
+options);
+
+heroSectionObserver.observe(getHeroSection);
 
