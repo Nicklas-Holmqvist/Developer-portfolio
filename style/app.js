@@ -117,14 +117,42 @@ function openHamburger() {
     openMenu.classList.toggle("hamburger-open"); 
 }
 
+// Vad intersection ska ändra, om headern ska få bakgrundsfärg eller dylikt
 const getHeaderForBackground = document.querySelector('#header');
+// Vad interaction ska känna av, vad ska komma in på skärmen för att köra funktionen
 const getHeroSection = document.querySelector('.hero-section');
 
-
-const options = {
+// Inställningar för interaction
+//Här finns root, rootMargin och treshold
+const optionsHeaderObserver = {
     rootMargin: "-250px"
 };
 
+// Funktion för intersection
+// Funktionen som kommer köras vid händelsen
+function headerObserver() {
+    getHeaderForBackground.classList.toggle("header-scroll");
+
+    //Vet inte hur jag ska få till en IF här. Vad ska den känna av. Kevin Powell funkar nere.
+    /*if (getHeaderForBackground.classList.contains != "header-scroll") {
+    console.log("test");
+    getHeaderForBackground.classList.add("header-scroll");
+    }
+    else {
+    getHeaderForBackground.classList.remove("header-scroll");
+}*/
+}
+
+// Namn och intersection funktionen
+// Här skapas intersection. new Inter... måste innehålla funktionen och option för Intersection
+const headerObserverTrigger = new IntersectionObserver(headerObserver, optionsHeaderObserver);
+
+// intersection namnet.observe funktion + vad som ska observeras
+headerObserverTrigger.observe(getHeroSection);
+
+
+// Kevin Powell
+/*
 const heroSectionObserver = new IntersectionObserver
 (function(
     entries, 
@@ -143,4 +171,5 @@ const heroSectionObserver = new IntersectionObserver
 options);
 
 heroSectionObserver.observe(getHeroSection);
+*/
 
