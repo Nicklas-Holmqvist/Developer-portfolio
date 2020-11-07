@@ -21,6 +21,10 @@
     box-sizing: border-box;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 .no-desktop {
     display: none;
 }
@@ -293,10 +297,6 @@ nav {
     padding: .1rem .3rem .3rem .3rem; 
 }
 
-.portfolio-section {
-    height: 60rem;
-}
-
 .what-makes-a-good-page-section {
     max-width: 45rem;
     width: 100%;
@@ -307,6 +307,10 @@ nav {
 
 .what-makes-a-good-page-section p {
     padding: .3rem 0;
+}
+
+.portfolio-section {
+    height: 60rem;
 }
 
 .about-section {
@@ -411,6 +415,15 @@ footer {
     animation: animationHeroBtnRight 1.5s ease-in forwards;
 }
 
+.animation-content-sections {
+    transform: translateY(2rem);
+    opacity: 1;
+
+    transition: opacity .3s ease-in;
+
+    animation: animateContentSections .3s ease-in forwards;
+}
+
 @keyframes animationHeader {
     0% {
         transform: translateY(-5rem);
@@ -489,4 +502,21 @@ footer {
         transform: translateX(0);
         opacity: 1;
     }
+}
+
+@keyframes animateContentSections {
+    0% {
+        transform: translateY(2rem);
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
 }
