@@ -183,6 +183,8 @@ header {
     left: 0;
     right: 0;
 
+    z-index: 100;
+
     transition: all .3s ease;
 }
 
@@ -416,12 +418,16 @@ footer {
 }
 
 .animation-content-sections {
-    transform: translateY(2rem);
-    opacity: 1;
+    transform: translateY(4rem);
+    opacity: 0;
 
     transition: opacity .3s ease-in;
+}
+.animation-fadein {
+    opacity: 1;    
+    transform: translateY(0);
 
-    animation: animateContentSections .3s ease-in forwards;
+    animation: animateContentSections .5s ease-in;
 }
 
 @keyframes animationHeader {

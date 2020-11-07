@@ -135,11 +135,9 @@ function headerObserver() {
     if (window.scrollY == 0) {
         return;
     }
-    console.log('david')
 
     //Vet inte hur jag ska få till en IF här. Vad ska den känna av. Kevin Powell funkar nere.
     if (!getHeaderForBackground.classList.contains("header-scroll")) {
-    console.log("test");
     getHeaderForBackground.classList.add("header-scroll");
     }
     else {
@@ -153,6 +151,31 @@ const headerObserverTrigger = new IntersectionObserver(headerObserver, optionsHe
 
 // intersection namnet.observe funktion + vad som ska observeras
 headerObserverTrigger.observe(getHeroSection);
+
+// Add Intersection Observer to my content
+
+const getWhatMakes = document.querySelector('.what-makes');
+const getPortfolio1 = document.querySelector('.portfolio-container-1');
+const getPortfolio2 = document.querySelector('.portfolio-container-2');
+const getPortfolio3 = document.querySelector('.portfolio-container-3');
+const getAboutMe = document.querySelector('.about-section');
+
+const optionContentObserver = {
+    treshold: .2
+}
+
+function whatMakesObserver () {
+    if (window.scrollY == 0) {
+        return;
+    }
+    getWhatMakes.classList.add("animation-fadein")
+}
+
+const whatMakesTrigger = new IntersectionObserver(whatMakesObserver, optionContentObserver);
+
+whatMakesTrigger.observe(getWhatMakes);
+
+
 
 
 // Kevin Powell
