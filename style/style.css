@@ -111,6 +111,8 @@
     font-weight: 500;
     font-size: 1rem;
 
+    padding: .5rem 1rem;
+
     transition: all .5s ease;
 }
 
@@ -181,7 +183,7 @@ header {
 }
 
 .header-scroll {
-    background: #fdfdfdee;
+    background: #efefefee;
     box-shadow: 1px 1px 5px #3e425155,
                 1px 1px 2px #FFFFFF22;
 }
@@ -271,6 +273,8 @@ nav {
 
 .hero-section .btn {
     margin-top: 2rem;
+
+    transition: all .5s ease;
 }
 
 .hero-btn-one {
@@ -321,4 +325,168 @@ footer {
     width: 100%;
     height: 20rem;
     background: var(--middlegrey);
+}
+
+/* Animationsklasser */
+
+.animation-header-logo {
+    transform: translateY(-5rem);
+    opacity: 0;
+
+    animation: animationHeader 1.8s ease-in forwards;
+}
+
+.animation-header-li1 {
+    transform: translateY(-5rem);
+    opacity: 0;
+
+    animation: animationHeader 1.9s ease-in forwards;   
+}
+
+.animation-header-li2 {
+    transform: translateY(-5rem);
+    opacity: 0;
+
+    animation: animationHeader 2s ease-in forwards;  
+}
+
+.animation-header-li3 {
+    transform: translateY(-5rem);
+    opacity: 0;
+
+    animation: animationHeader 2.1s ease-in forwards;  
+}
+
+.animation-header-li4 {
+    transform: translateY(-5rem);
+    opacity: 0;
+
+    animation: animationHeader 2.2s ease-in forwards;  
+}
+
+.animation-header-soc1 {
+    transform: translateY(-5rem);
+    opacity: 0;
+
+    animation: animationHeader 2.3s ease-in forwards;    
+}
+
+.animation-header-soc2 {
+    transform: translateY(-5rem);
+    opacity: 0;
+
+    animation: animationHeader 2.4s ease-in forwards;  
+}
+
+.animation-header-soc3 {
+    transform: translateY(-5rem);
+    opacity: 0;
+
+    animation: animationHeader 2.5s ease-in forwards;  
+}
+
+.animation-hero-h1 {
+    transform: translateY(-5rem);
+    opacity: 0;
+
+    animation: animationHeroh1 .8s ease-in forwards;
+}
+
+.animation-hero-h3 {
+    transform: translateY(5rem);
+    opacity: 0;
+
+    animation: animationHeroH3 1.2s ease-in forwards;
+}
+
+.animation-hero-btn-left {
+    transform: translateX(10rem);
+
+    animation: animationHeroBtnLeft 1.4s ease-in forwards;
+}
+
+.animation-hero-btn-right {
+    transform: translateX(-10rem);
+
+    animation: animationHeroBtnRight 1.5s ease-in forwards;
+}
+
+@keyframes animationHeader {
+    0% {
+        transform: translateY(-5rem);
+        opacity: 0;
+    }
+
+    75% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes animationHeroh1 {
+    0% {
+        transform: translateY(-5rem);
+        opacity: 0;
+    }
+
+    60% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes animationHeroH3 {
+    0% {
+        transform: translateY(5rem);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes animationHeroBtnLeft {
+    0% {
+        transform: translateX(-10rem);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes animationHeroBtnRight {
+    0% {
+        transform: translateX(10rem);
+        opacity: 0;
+    }
+
+    75% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }

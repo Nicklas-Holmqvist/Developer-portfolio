@@ -131,16 +131,20 @@ const optionsHeaderObserver = {
 // Funktion för intersection
 // Funktionen som kommer köras vid händelsen
 function headerObserver() {
-    getHeaderForBackground.classList.toggle("header-scroll");
+    //getHeaderForBackground.classList.toggle("header-scroll");
+    if (window.scrollY == 0) {
+        return;
+    }
+    console.log('david')
 
     //Vet inte hur jag ska få till en IF här. Vad ska den känna av. Kevin Powell funkar nere.
-    /*if (getHeaderForBackground.classList.contains != "header-scroll") {
+    if (!getHeaderForBackground.classList.contains("header-scroll")) {
     console.log("test");
     getHeaderForBackground.classList.add("header-scroll");
     }
     else {
     getHeaderForBackground.classList.remove("header-scroll");
-}*/
+}
 }
 
 // Namn och intersection funktionen
