@@ -165,6 +165,8 @@ h3 {
 h4 {
     font-size: 2rem;
     font-weight: 400;
+
+    padding-bottom: 1.5rem;
 }
 
 .nav-header i {
@@ -194,9 +196,9 @@ header {
 }
 
 .header-scroll {
-    background: #efefefee;
+    background: #141414ee;
     box-shadow: 1px 1px 5px #3e425155,
-                1px 1px 2px #FFFFFF22;
+                1px 1px 2px #000000;
 }
 
 .nav-header {
@@ -305,15 +307,16 @@ nav {
 }
 
 .what-makes-a-good-page-section {
-    max-width: 45rem;
-    width: 100%;
-
-    padding: 4rem 0;
+    padding: 4rem 2rem;
     margin: 0 auto;
 }
 
+.what-makes-right {
+    padding-left: 3rem;
+}
+
+
 .what-makes-a-good-page-section p {
-    padding: .3rem 0;
 }
 
 .portfolio-section {
@@ -332,7 +335,7 @@ nav {
 }
 
 .portfolio-container-2 h4, p {
-    color: var(--middlegrey);
+    color: var(--white);
 }
 
 .portfolio-container-3{
@@ -348,6 +351,11 @@ nav {
     padding: 4rem 0;
 }
 
+.portfolio-text {
+    padding: 0 2rem;
+    justify-content: center;
+}
+
 .portfolio-img {
     border-radius: 8px;
     overflow: hidden;
@@ -357,21 +365,31 @@ nav {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    object-position: center;
-    
+    object-position: center;    
 }
 
-.simple-math-img {
-    background: var(--white);
-    
+.portfolio-item a {
+    align-self: flex-start;
+}
+.portfolio-item .btn {
+    margin-top: 1.5rem;   
+}
+
+.simple-math-text {
+    text-align: right;
+}
+
+.simple-math-text a {
+    align-self: flex-end;
 }
 
 .about-section {
-    max-width: 45rem;
-    width: 100%;
-
     padding: 4rem 0;
     margin: 0 auto;
+}
+
+.about-text-right {
+    padding-left: 3rem;
 }
 
 .about-section p {
