@@ -128,6 +128,8 @@ body {
 }
 
 a {
+    font-family: 'Be Vietnam', sans-serif;
+    color: var(--white);
     text-decoration: none;
     color: inherit;
 
@@ -136,7 +138,7 @@ a {
     transition: all .5s ease;
 }
 
-h1, h2, h3, h4, p, li, a, i {
+h1, h2, h3, h4, p, li, i {
     font-family: 'Be Vietnam', sans-serif;
     color: var(--middlegrey);
 }
@@ -180,6 +182,10 @@ h4 {
     border: 2px var(--middlegrey) solid;
     border-radius: 3px;
     padding: .5rem 2rem .7rem 2rem;
+
+    /* box-shadow: 2px 3px 3px #55555511,
+                2px 2px 3px #00000022,
+                1px 1px 5px #00000022; */
 
     transition: all .5s ease;
 }
@@ -300,7 +306,7 @@ nav {
     font-weight: 600;
 }
 
-.hero-section mark{
+mark{
     background: var(--grey);
     color: var(--white);   
     padding: .1rem .3rem .3rem .3rem; 
@@ -359,6 +365,10 @@ nav {
 .portfolio-img {
     border-radius: 8px;
     overflow: hidden;
+
+    box-shadow: 2px 3px 3px #55555511,
+                2px 2px 3px #00000022,
+                1px 1px 5px #00000022;
 }
 
 .portfolio-img img {
@@ -381,6 +391,10 @@ nav {
 
 .simple-math-text a {
     align-self: flex-end;
+}
+
+.math-img {
+    box-shadow: none;
 }
 
 .about-section {

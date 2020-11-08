@@ -20,12 +20,38 @@ console.log(changeMark);
 
 console.log(openHamburger);
 
+
+
+
 /** An collectionfunction that starts at window.onload  */
 function main() {
 
     // Change the backgroundcolor of the page.
     setInterval(changeBackgroundColor, 60000);
     changeBackgroundColor()
+}
+
+// Links
+
+getBtnOne.addEventListener('mouseover', hoverALink);
+getBtnOne.addEventListener('mouseout', leaveALink);
+
+const getBtn = document.querySelectorAll(".btn");
+
+// Denna fungerar ju bara på första länken
+// getBtn.forEach(e => {
+//     e.addEventListener('mouseover', hoverALink)
+//     e.addEventListener('mouseout', leaveALink)
+// });
+
+function hoverALink() {
+    getBtnOne.style.color = "var(--middlegrey)";
+    getBtnOne.style.backgroundColor = "var(--white)";
+}
+
+function leaveALink() {
+    getBtnOne.style.color = "var(--white)";
+    getBtnOne.style.backgroundColor = "var(--middlegrey)";
 }
 
 /** Change colors of the page when the evening begins and change back at the morning.
@@ -218,7 +244,6 @@ function getAboutMeObserver () {
 const getAboutMeTrigger = new IntersectionObserver(getAboutMeObserver, optionContentObserver);
 
 getAboutMeTrigger.observe(getAboutMe);
-
 
 
 
