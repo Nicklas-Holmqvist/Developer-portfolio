@@ -303,7 +303,7 @@ nav {
     max-width: 45rem;
     width: 100%;
 
-    padding: 4rem 0;
+    padding: 8rem 0 4rem 0;
     margin: 0 auto;
 }
 
@@ -312,7 +312,38 @@ nav {
 }
 
 .portfolio-section {
-    height: 60rem;
+}
+
+.portfolio-container {
+    height: 30rem;
+}
+
+.portfolio-container-1 {
+    background: #E1BC81;
+}
+
+.portfolio-container-2 {
+    background: #FF9F1C;
+}
+
+.portfolio-container-3 {
+    background: #D32956;
+}
+
+.portfolio-item {
+    height: 100%;
+    padding: 4rem 0;
+}
+
+.portfolio-img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.simple-math-img {
+    background: var(--white);
 }
 
 .about-section {

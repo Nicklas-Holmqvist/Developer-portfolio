@@ -161,7 +161,7 @@ const getPortfolio3 = document.querySelector('.portfolio-container-3');
 const getAboutMe = document.querySelector('.about-section');
 
 const optionContentObserver = {
-    treshold: .2
+    treshold: .6
 }
 
 function whatMakesObserver () {
@@ -174,6 +174,50 @@ function whatMakesObserver () {
 const whatMakesTrigger = new IntersectionObserver(whatMakesObserver, optionContentObserver);
 
 whatMakesTrigger.observe(getWhatMakes);
+
+function portfolio1Observer () {
+    if (window.scrollY == 0) {
+        return;
+    }
+    getPortfolio1.classList.add("animation-fadein")
+}
+
+const portfolio1Trigger = new IntersectionObserver(portfolio1Observer, optionContentObserver);
+
+portfolio1Trigger.observe(getPortfolio1);
+
+function portfolio2Observer () {
+    if (window.scrollY == 0) {
+        return;
+    }
+    getPortfolio2.classList.add("animation-fadein")
+}
+
+const portfolio2Trigger = new IntersectionObserver(portfolio2Observer, optionContentObserver);
+
+portfolio2Trigger.observe(getPortfolio2);
+
+function portfolio3Observer () {
+    if (window.scrollY == 0) {
+        return;
+    }
+    getPortfolio3.classList.add("animation-fadein")
+}
+
+const portfolio3Trigger = new IntersectionObserver(portfolio3Observer, optionContentObserver);
+
+portfolio3Trigger.observe(getPortfolio3);
+
+function getAboutMeObserver () {
+    if (window.scrollY == 0) {
+        return;
+    }
+    getAboutMe.classList.add("animation-fadein")
+}
+
+const getAboutMeTrigger = new IntersectionObserver(getAboutMeObserver, optionContentObserver);
+
+getAboutMeTrigger.observe(getAboutMe);
 
 
 
