@@ -162,6 +162,11 @@ h3 {
     transition: all .5s ease;
 }
 
+h4 {
+    font-size: 2rem;
+    font-weight: 400;
+}
+
 .nav-header i {
     font-size: 1.1rem;
     padding-left: 1.2rem;
@@ -303,7 +308,7 @@ nav {
     max-width: 45rem;
     width: 100%;
 
-    padding: 8rem 0 4rem 0;
+    padding: 4rem 0;
     margin: 0 auto;
 }
 
@@ -322,12 +327,20 @@ nav {
     background: #E1BC81;
 }
 
-.portfolio-container-2 {
-    background: #FF9F1C;
+.portfolio-container-1 h4, p {
+    color: var(--middlegrey);
 }
 
-.portfolio-container-3 {
-    background: #D32956;
+.portfolio-container-2 h4, p {
+    color: var(--middlegrey);
+}
+
+.portfolio-container-3{
+    background: #D32956;    
+}
+
+.portfolio-container-3 p, h4 {
+    color: var(--white);    
 }
 
 .portfolio-item {
@@ -335,15 +348,22 @@ nav {
     padding: 4rem 0;
 }
 
+.portfolio-img {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
 .portfolio-img img {
     height: 100%;
     width: 100%;
     object-fit: cover;
     object-position: center;
+    
 }
 
 .simple-math-img {
     background: var(--white);
+    
 }
 
 .about-section {
