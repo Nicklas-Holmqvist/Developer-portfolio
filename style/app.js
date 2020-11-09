@@ -16,16 +16,10 @@ const openMenu = document.querySelector('.nav-mobile');
 
 
 getHamburgerButton.addEventListener('click', openHamburger);
-console.log(changeMark);
-
-console.log(openHamburger);
-
-
 
 
 /** An collectionfunction that starts at window.onload  */
 function main() {
-
     // Change the backgroundcolor of the page.
     setInterval(changeBackgroundColor, 60000);
     changeBackgroundColor()
@@ -45,13 +39,13 @@ const getBtn = document.querySelectorAll(".btn");
 // });
 
 function hoverALink() {
-    getBtnOne.style.color = "var(--middlegrey)";
-    getBtnOne.style.backgroundColor = "var(--white)";
+    getBtn.style.color = "var(--middlegrey)";
+    getBtn.style.backgroundColor = "var(--white)";
 }
 
 function leaveALink() {
-    getBtnOne.style.color = "var(--white)";
-    getBtnOne.style.backgroundColor = "var(--middlegrey)";
+    getBtn.style.color = "var(--white)";
+    getBtn.style.backgroundColor = "var(--middlegrey)";
 }
 
 /** Change colors of the page when the evening begins and change back at the morning.
@@ -73,9 +67,8 @@ function changeBackgroundColor() {
         changeH1.style.color = "var(--white)";
         btnDark()
         changeBtnOneDark();
-
-
     }
+    
     else {
         changeBackground.style.background = "var(--white)";
         changeHeroImages.style.backgroundImage = "url('./style/img/hero-background-day.png')";

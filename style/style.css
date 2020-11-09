@@ -202,9 +202,9 @@ header {
 }
 
 .header-scroll {
-    background: #141414ee;
+    background: #efefefee;
     box-shadow: 1px 1px 5px #3e425155,
-                1px 1px 2px #000000;
+                1px 1px 2px #00000022;
 }
 
 .nav-header {
@@ -239,7 +239,7 @@ nav {
 
 .hamburger-line {
     height: 2px;
-    background: var(--white);  
+    background: var(--darkgrey);  
 }
 
 
@@ -265,11 +265,16 @@ nav {
 }
 
 .nav-mobile i {
+    color: var(--white);
     font-size: 1.1rem;
     margin-top: 2rem;
     padding: .5rem;
 
     transition: all .5s ease;
+}
+
+.nav-mobile a {
+    color: var(--white);
 }
 
 .hero-section {
@@ -417,6 +422,7 @@ footer {
 }
 
 /* Animationsklasser */
+
 
 .animation-header-logo {
     transform: translateY(-5rem);
@@ -579,7 +585,7 @@ footer {
 
 @keyframes animationHeroBtnRight {
     0% {
-        transform: translateX(10rem);
+        transform: translateX(-10rem);
         opacity: 0;
     }
 
