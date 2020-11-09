@@ -10,7 +10,7 @@ const changeMark = document.querySelector('mark');
 const changeH1 = document.querySelector('H1');
 const getBtnOne = document.querySelector('.hero-btn-one');
 const getParagraph = document.querySelectorAll('body > p');
-const getMobileHeader = document.querySelector('.header-mobile');
+//const getMobileHeader = document.querySelector('.header-mobile');
 
 
 const getHamburgerButton = document.querySelector('.hamburger');
@@ -106,7 +106,6 @@ function changeBackgroundColor() {
         changeMark.style.color = "var(--darkgrey)";
         changeMark.style.background = "var(--white)";
         changeH1.style.color = "var(--white)";
-        getMobileHeader.style.backgroundColor = "#141414ee";
         btnDark()
         changeBtnOneDark();
         hamburgerDark();
@@ -120,7 +119,6 @@ function changeBackgroundColor() {
         changeMark.style.color = "var(--white)";
         changeMark.style.background = "var(--darkgrey)";
         changeH1.style.color = "var(--darkgrey)";
-        getMobileHeader.style.backgroundColor = "#efefefee";
         listItemDay();
         btnDay()
         changeBtnOneDay()
@@ -152,7 +150,7 @@ function hamburgerDark() {
     const getHamburgerLines = document.querySelectorAll('.hamburger-line');
 
     getHamburgerLines.forEach((e) => {
-        e.style.background = "var(--white)";
+        e.style.backgroundColor = "var(--white)";
     });
 }
 
@@ -160,7 +158,7 @@ function hamburgerDay() {
     const getHamburgerLines = document.querySelectorAll('.hamburger-line');
 
     getHamburgerLines.forEach((e) => {
-        e.style.background = "var(--darkgrey)";
+        e.style.backgroundColor = "var(--darkgrey)";
     });
 }
 
@@ -195,8 +193,6 @@ function changeBtnOneDay() {
     getBtnOne.style.borderColor = "var(--beige)";
 }
 
-
-
 function openHamburger() {
     openMenu.classList.toggle("hamburger-open"); 
 }
@@ -220,7 +216,7 @@ function headerObserver() {
         return;
     }
 
-    if (theHour <= 7 || theHour >= 19) {
+    else if (theHour <= 7 || theHour >= 19) {
 
         //Vet inte hur jag ska få till en IF här. Vad ska den känna av. Kevin Powell funkar nere.
         if (!getHeaderForBackground.classList.contains("header-scroll-dark")) {
