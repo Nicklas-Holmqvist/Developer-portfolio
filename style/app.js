@@ -10,6 +10,8 @@ const changeMark = document.querySelector('mark');
 const changeH1 = document.querySelector('H1');
 const getBtnOne = document.querySelector('.hero-btn-one');
 const getParagraph = document.querySelectorAll('body > p');
+const getMobileHeader = document.querySelector('.header-mobile');
+
 
 const getHamburgerButton = document.querySelector('.hamburger');
 const openMenu = document.querySelector('.nav-mobile');
@@ -88,13 +90,15 @@ console.log(getAllMobileLi)
 /** Change colors of the page when the evening begins and change back at the morning.
  * It is an automatic nightmode.
  */
+const theHour = new Date().getHours();
+
 function changeBackgroundColor() {
     
     // Get the hour to use in a IF to change the theme of the page.
-    const theHour = new Date().getHours();
+    
 
     // Change the backgroundcolor at specific hours.
-    if (theHour <= 7 || theHour >= 17) {
+    if (theHour <= 7 || theHour >= 19) {
         changeBackground.style.background = "var(--darkgrey)";
         changeHeroImages.style.backgroundImage = "url('./style/img/hero-background-dark.png')";
         listItemDark();
@@ -102,8 +106,11 @@ function changeBackgroundColor() {
         changeMark.style.color = "var(--darkgrey)";
         changeMark.style.background = "var(--white)";
         changeH1.style.color = "var(--white)";
+        getMobileHeader.style.backgroundColor = "#141414ee";
         btnDark()
         changeBtnOneDark();
+        hamburgerDark();
+        
     }
 
     else {
@@ -113,10 +120,14 @@ function changeBackgroundColor() {
         changeMark.style.color = "var(--white)";
         changeMark.style.background = "var(--darkgrey)";
         changeH1.style.color = "var(--darkgrey)";
+        getMobileHeader.style.backgroundColor = "#efefefee";
         listItemDay();
         btnDay()
         changeBtnOneDay()
+        hamburgerDay()
     }
+
+    return theHour
 }
 
 
@@ -131,11 +142,26 @@ function listItemDark() {
 
 function listItemDay() {
  const getDay = document.querySelectorAll(".dark");
- console.log(getDay);
 
  getDay.forEach((e) => {
      e.style.color = "var(--middlegrey)";
  });
+}
+
+function hamburgerDark() {
+    const getHamburgerLines = document.querySelectorAll('.hamburger-line');
+
+    getHamburgerLines.forEach((e) => {
+        e.style.background = "var(--white)";
+    });
+}
+
+function hamburgerDay() {
+    const getHamburgerLines = document.querySelectorAll('.hamburger-line');
+
+    getHamburgerLines.forEach((e) => {
+        e.style.background = "var(--darkgrey)";
+    });
 }
 
 function btnDark() {
@@ -169,6 +195,8 @@ function changeBtnOneDay() {
     getBtnOne.style.borderColor = "var(--beige)";
 }
 
+
+
 function openHamburger() {
     openMenu.classList.toggle("hamburger-open"); 
 }
@@ -192,14 +220,27 @@ function headerObserver() {
         return;
     }
 
-    //Vet inte hur jag ska få till en IF här. Vad ska den känna av. Kevin Powell funkar nere.
-    if (!getHeaderForBackground.classList.contains("header-scroll")) {
-    getHeaderForBackground.classList.add("header-scroll");
+    if (theHour <= 7 || theHour >= 19) {
+
+        //Vet inte hur jag ska få till en IF här. Vad ska den känna av. Kevin Powell funkar nere.
+        if (!getHeaderForBackground.classList.contains("header-scroll-dark")) {
+            getHeaderForBackground.classList.add("header-scroll-dark");
+            }
+            else {
+            getHeaderForBackground.classList.remove("header-scroll-dark");
+        }
     }
-    else {
-    getHeaderForBackground.classList.remove("header-scroll");
+
+    else  {        
+        if (!getHeaderForBackground.classList.contains("header-scroll-day")) {
+        getHeaderForBackground.classList.add("header-scroll-day");
+        }
+        else {
+        getHeaderForBackground.classList.remove("header-scroll-day");
+         }
+        }  
 }
-}
+
 
 // Namn och intersection funktionen
 // Här skapas intersection. new Inter... måste innehålla funktionen och option för Intersection

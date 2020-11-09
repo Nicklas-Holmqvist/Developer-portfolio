@@ -213,7 +213,13 @@ header {
     transition: all .3s ease;
 }
 
-.header-scroll {
+.header-scroll-dark {
+    background: #141414ee;
+    box-shadow: 1px 1px 5px #3e425155,
+                1px 1px 2px #00000022;
+}
+
+.header-scroll-day {
     background: #efefefee;
     box-shadow: 1px 1px 5px #3e425155,
                 1px 1px 2px #00000022;
@@ -251,7 +257,6 @@ nav {
 
 .hamburger-line {
     height: 2px;
-    background: var(--darkgrey);  
 }
 
 
@@ -346,12 +351,21 @@ mark{
     background: #E1BC81;
 }
 
-.portfolio-container-1 h4, p {
-    color: var(--middlegrey);
+.portfolio-container-2 {
+    background: var(--middlegrey);
 }
 
-.portfolio-container-2 h4, p {
+.simple-math-text > p {
     color: var(--white);
+}
+
+.simple-math-text a {
+    align-self: flex-end;
+    background: #F99B1B;
+}
+
+.math-img {
+    box-shadow: none!important;
 }
 
 .portfolio-container-3{
@@ -395,25 +409,7 @@ mark{
     margin-top: 1.5rem;   
 }
 
-.simple-math-text p {
-    text-align: right;
-    color: var(--darkgrey);
-}
 
-.simple-math-text h4 {
-    text-align: right;
-    color: var(--darkgrey);
-}
-
-.simple-math-text a {
-    align-self: flex-end;
-    color: var(--white)!important;
-    background: #F99B1B;
-}
-
-.math-img {
-    box-shadow: none;
-}
 
 .about-section {
     padding: 4rem 0;
