@@ -326,13 +326,6 @@ mark{
     padding-left: 3rem;
 }
 
-
-.what-makes-a-good-page-section p {
-}
-
-.portfolio-section {
-}
-
 .portfolio-container {
     height: 30rem;
 }
@@ -363,7 +356,7 @@ mark{
 }
 
 .portfolio-text {
-    padding: 0 2rem;
+    padding: 0 0;
     justify-content: center;
 }
 
