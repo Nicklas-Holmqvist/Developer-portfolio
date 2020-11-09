@@ -27,27 +27,64 @@ function main() {
 
 // Links
 
+const getBtn = document.querySelectorAll(".btn");
+
+for (let i = 0; i < getBtn.length; i++) {
+    getBtn[i].addEventListener('mouseover', function(event) {
+        event.target.style.color = "var(--middlegrey)";
+        event.target.style.backgroundColor = "var(--white)";
+    });
+}
+
+for (let i = 0; i < getBtn.length; i++) {
+getBtn[i].addEventListener('mouseout', function(event) {
+    event.target.style.color = "unset";
+    event.target.style.backgroundColor = "unset";
+});
+}
+
 getBtnOne.addEventListener('mouseover', hoverALink);
 getBtnOne.addEventListener('mouseout', leaveALink);
 
-const getBtn = document.querySelectorAll(".btn");
-
-// Denna fungerar ju bara på första länken
-// getBtn.forEach(e => {
-//     e.addEventListener('mouseover', hoverALink)
-//     e.addEventListener('mouseout', leaveALink)
-// });
-
 function hoverALink() {
-    getBtn.style.color = "var(--middlegrey)";
-    getBtn.style.backgroundColor = "var(--white)";
+    getBtnOne.target.style.color = "var(--middlegrey)";
+    getBtnOne.target.style.backgroundColor = "var(--white)";
 }
 
 function leaveALink() {
-    getBtn.style.color = "var(--white)";
-    getBtn.style.backgroundColor = "var(--middlegrey)";
+    getBtnOne.style.color = "var(--white)";
+    getBtnOne.style.backgroundColor = "var(--middlegrey)";
 }
 
+const getAllDesktopLi = document.querySelectorAll('.ul-desktop li');
+
+for (let i = 0; i < getAllDesktopLi.length; i++) {
+    getAllDesktopLi[i].addEventListener('mouseover', function(event) {
+        event.target.style.fontWeight = "bold";
+    });
+}
+
+for (let i = 0; i < getAllDesktopLi.length; i++) {
+    getAllDesktopLi[i].addEventListener('mouseout', function(event) {
+        event.target.style.fontWeight = "unset";
+    });
+}
+
+const getAllMobileLi = document.querySelectorAll('.ul-mobile li');
+
+for (let i = 0; i < getAllMobileLi.length; i++) {
+    getAllMobileLi[i].addEventListener('mouseover', function(event) {
+        event.target.style.background = "var(--darkgrey)";
+    });
+}
+
+for (let i = 0; i < getAllMobileLi.length; i++) {
+    getAllMobileLi[i].addEventListener('mouseout', function(event) {
+        event.target.style.background = "unset";
+    });
+}
+
+console.log(getAllMobileLi)
 /** Change colors of the page when the evening begins and change back at the morning.
  * It is an automatic nightmode.
  */
@@ -68,7 +105,7 @@ function changeBackgroundColor() {
         btnDark()
         changeBtnOneDark();
     }
-    
+
     else {
         changeBackground.style.background = "var(--white)";
         changeHeroImages.style.backgroundImage = "url('./style/img/hero-background-day.png')";
@@ -180,7 +217,7 @@ const getPortfolio3 = document.querySelector('.portfolio-container-3');
 const getAboutMe = document.querySelector('.about-section');
 
 const optionContentObserver = {
-    treshold: .6
+    treshold: .2
 }
 
 function whatMakesObserver () {
@@ -237,28 +274,3 @@ function getAboutMeObserver () {
 const getAboutMeTrigger = new IntersectionObserver(getAboutMeObserver, optionContentObserver);
 
 getAboutMeTrigger.observe(getAboutMe);
-
-
-
-// Kevin Powell
-/*
-const heroSectionObserver = new IntersectionObserver
-(function(
-    entries, 
-    heroSectionObserver
-    ) {
-    entries.forEach(change => {
-        if (!change.isIntersecting) {
-            console.log("lägg till");
-            getHeaderForBackground.classList.add("header-scroll");
-        } 
-        else {
-            getHeaderForBackground.classList.remove("header-scroll");
-        }        
-    });
-},
-options);
-
-heroSectionObserver.observe(getHeroSection);
-*/
-

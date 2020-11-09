@@ -41,7 +41,7 @@
    }
 
    .hero-section {
-    height: 50rem;
+    height: 55rem;
     }
 
    .hero-text-container {
@@ -108,7 +108,7 @@
 
     .simple-math-text h4, p, a {
         color: var(--darkgrey);
-        text-align: left;
+        text-align: left!important;
     }
 
     .portfolio-img {

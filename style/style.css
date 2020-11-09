@@ -117,14 +117,26 @@ body {
 
     padding: .5rem 1rem;
 
-    transition: all .5s ease;
+    transition: all .1s ease;
 }
 
 .ul-mobile li {
+    width: 100%;
     font-weight: 400;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
+
+    padding: 1rem 0;
+    
+    text-align: center;
+
+    color: var(--white);
 
     transition: all .5s ease;
+}
+
+.ul-mobile a {
+    
+    width: 100%;
 }
 
 a {
@@ -266,7 +278,7 @@ nav {
 
 .nav-mobile i {
     color: var(--white);
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     margin-top: 2rem;
     padding: .5rem;
 
@@ -383,12 +395,20 @@ mark{
     margin-top: 1.5rem;   
 }
 
-.simple-math-text {
+.simple-math-text p {
     text-align: right;
+    color: var(--darkgrey);
+}
+
+.simple-math-text h4 {
+    text-align: right;
+    color: var(--darkgrey);
 }
 
 .simple-math-text a {
     align-self: flex-end;
+    color: var(--white)!important;
+    background: #F99B1B;
 }
 
 .math-img {
