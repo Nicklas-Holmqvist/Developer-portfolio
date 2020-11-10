@@ -192,12 +192,9 @@ h4 {
 
 .btn {
     border: 2px var(--middlegrey) solid;
+    background: #efefef55;
     border-radius: 3px;
     padding: .5rem 2rem .7rem 2rem;
-
-    /* box-shadow: 2px 3px 3px #55555511,
-                2px 2px 3px #00000022,
-                1px 1px 5px #00000022; */
 
     transition: all .5s ease;
 }
@@ -322,6 +319,7 @@ nav {
     margin-right: 1.5rem;
     color: var(--darkgrey);
     background: var(--white);
+    
 }
 
 .hero-btn-two {
@@ -347,32 +345,36 @@ mark{
     height: 30rem;
 }
 
+.upplev-h4 {
+    color: var(--middlegrey);
+}
+
 .portfolio-container-1 {
     background: #E1BC81;
 }
 
-.portfolio-container-2 {
-    background: var(--middlegrey);
-}
-
-.simple-math-text > p {
+.simple-math-text > p, h4 {
     color: var(--white);
 }
 
 .simple-math-text a {
     align-self: flex-end;
-    background: #F99B1B;
 }
 
 .math-img {
     box-shadow: none!important;
 }
 
+.math-btn {
+    background: #FF9F1C;
+    color: var(--white);
+}
+
 .portfolio-container-3{
     background: #D32956;    
 }
 
-.portfolio-container-3 p, h4 {
+.pandora-text p, h4 {
     color: var(--white);    
 }
 

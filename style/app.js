@@ -9,8 +9,13 @@ const changeLogo = document.querySelector('.logo > img');
 const changeMark = document.querySelector('mark');
 const changeH1 = document.querySelector('H1');
 const getBtnOne = document.querySelector('.hero-btn-one');
+const getBtnTwo = document.querySelector('.hero-btn-two');
 const getParagraph = document.querySelectorAll('body > p');
-//const getMobileHeader = document.querySelector('.header-mobile');
+// const getMobileHeader = document.querySelector('.header-mobile');
+const getNavMobile = document.querySelector('.nav-mobile');
+const getNavMobileSocial = document.querySelectorAll('.nav-mobile i');
+const getMathText = document.querySelectorAll('.simple-math-text p, h4');
+const getMathBtn = document.querySelector('.math-btn');
 
 
 const getHamburgerButton = document.querySelector('.hamburger');
@@ -40,8 +45,8 @@ for (let i = 0; i < getBtn.length; i++) {
 
 for (let i = 0; i < getBtn.length; i++) {
 getBtn[i].addEventListener('mouseout', function(event) {
-    event.target.style.color = "unset";
-    event.target.style.backgroundColor = "unset";
+    event.target.style.color = "var(--white)";
+    event.target.style.backgroundColor = "#efefef55";
 });
 }
 
@@ -49,13 +54,25 @@ getBtnOne.addEventListener('mouseover', hoverALink);
 getBtnOne.addEventListener('mouseout', leaveALink);
 
 function hoverALink() {
-    getBtnOne.target.style.color = "var(--middlegrey)";
-    getBtnOne.target.style.backgroundColor = "var(--white)";
+    getBtnOne.style.backgroundColor = "var(--white)";
 }
 
 function leaveALink() {
     getBtnOne.style.color = "var(--white)";
     getBtnOne.style.backgroundColor = "var(--middlegrey)";
+}
+
+getMathBtn.addEventListener('mouseover', hoverALinkMath);
+getMathBtn.addEventListener('mouseout', leaveALinkMath);
+
+function hoverALinkMath() {
+    getMathBtn.style.backgroundcolor = "var(--white)";
+    getMathBtn.style.color = "var(--darkgrey)!important";
+}
+
+function leaveALinkMath() {
+    getMathBtn.style.color = "var(--white)";
+    getMathBtn.style.backgroundColor = "#FF9F1C";
 }
 
 const getAllDesktopLi = document.querySelectorAll('.ul-desktop li');
@@ -73,18 +90,63 @@ for (let i = 0; i < getAllDesktopLi.length; i++) {
 }
 
 const getAllMobileLi = document.querySelectorAll('.ul-mobile li');
-
-for (let i = 0; i < getAllMobileLi.length; i++) {
-    getAllMobileLi[i].addEventListener('mouseover', function(event) {
-        event.target.style.background = "var(--darkgrey)";
-    });
-}
-
-for (let i = 0; i < getAllMobileLi.length; i++) {
-    getAllMobileLi[i].addEventListener('mouseout', function(event) {
+    
+    for (let i = 0; i < getAllMobileLi.length; i++) {
+        getAllMobileLi[i].addEventListener('mouseover', function(event) {
+            event.target.style.background = "var(--white)";
+            event.target.style.color = "var(--darkgrey)";
+        });
+    }
+        
+    for (let i = 0; i < getAllMobileLi.length; i++) {
+        getAllMobileLi[i].addEventListener('mouseout', function(event) {
         event.target.style.background = "unset";
+        event.target.style.color = "var(--white)";
     });
+    }   
+for (let i = 0; i <getAllMobileLi.length; i++) {
+    getAllMobileLi[i].addEventListener('click', openHamburger)
 }
+
+function changeMobilSocDark() {   
+    getNavMobileSocial.forEach((e) => {
+        e.style.color = "var(--white)";
+    });
+   }
+
+function changeMobilSocDay() {   
+    getNavMobileSocial.forEach((e) => {
+        e.style.color = "var(--darkgrey)";
+    });
+   }
+
+function changeMobilLiDark() {   
+    getAllMobileLi.forEach((e) => {
+        e.style.color = "var(--white)";
+    });
+   }
+
+function changeMobilLiDay() {   
+    getAllMobileLi.forEach((e) => {
+        e.style.color = "var(--darkgrey)";
+    });
+   }
+
+function changeMathDark() {   
+    getMathText.forEach((e) => {
+        e.style.color = "var(--white)";
+    });
+   }
+
+function changeMathiDay() {   
+    getMathText.forEach((e) => {
+        e.style.color = "var(--darkgrey)";
+    });
+   }
+
+   console.log(getNavMobileSocial);
+
+
 
 console.log(getAllMobileLi)
 /** Change colors of the page when the evening begins and change back at the morning.
@@ -98,7 +160,7 @@ function changeBackgroundColor() {
     
 
     // Change the backgroundcolor at specific hours.
-    if (theHour <= 7 || theHour >= 19) {
+    if (theHour <= 7 || theHour >= 22) {
         changeBackground.style.background = "var(--darkgrey)";
         changeHeroImages.style.backgroundImage = "url('./style/img/hero-background-dark.png')";
         listItemDark();
@@ -109,6 +171,12 @@ function changeBackgroundColor() {
         btnDark()
         changeBtnOneDark();
         hamburgerDark();
+        changeNavMobileDark()
+        changeMobilLiDark()
+        changeMobilSocDark()
+        changeMathdark()
+        changeMathiDark()
+        
         
     }
 
@@ -123,11 +191,14 @@ function changeBackgroundColor() {
         btnDay()
         changeBtnOneDay()
         hamburgerDay()
+        changeNavMobileDay()        
+        changeMobilSocDay()
+        changeMobilLiDay()
+        changeMathiDay()
     }
 
     return theHour
 }
-
 
 function listItemDark() {
  const getDarkClass = document.querySelectorAll(".dark");
@@ -144,6 +215,14 @@ function listItemDay() {
  getDay.forEach((e) => {
      e.style.color = "var(--middlegrey)";
  });
+}
+
+function changeNavMobileDark() {
+    getNavMobile.style.backgroundColor = "#141414ee";
+}
+
+function changeNavMobileDay() {
+    getNavMobile.style.backgroundColor = "#efefefee";
 }
 
 function hamburgerDark() {
@@ -173,11 +252,11 @@ function btnDark() {
 }
 
 function btnDay() {
- const getBtn = document.querySelectorAll(".btn");
+ const getBtn = document.querySelectorAll(".portfolio-btn");
  console.log(getBtn);
 
  getBtn.forEach((e) => {
-     e.style.color = "var(--middlegrey)";
+     e.style.color = "var(--white)";
      e.style.borderColor = "var(--darkgrey)";
  });
 }
@@ -191,6 +270,14 @@ function changeBtnOneDay() {
     getBtnOne.style.color = "var(--white)";
     getBtnOne.style.background = "var(--middlegrey)";
     getBtnOne.style.borderColor = "var(--beige)";
+}
+
+function changeMathdark() {
+    getMathText.style.color = "var(--white)";
+}
+
+function changeMathday() {
+    getMathText.style.color = "var(--darkgrey)";
 }
 
 function openHamburger() {
@@ -216,7 +303,7 @@ function headerObserver() {
         return;
     }
 
-    else if (theHour <= 7 || theHour >= 19) {
+    else if (theHour <= 7 || theHour >= 22) {
 
         //Vet inte hur jag ska få till en IF här. Vad ska den känna av. Kevin Powell funkar nere.
         if (!getHeaderForBackground.classList.contains("header-scroll-dark")) {
@@ -235,7 +322,8 @@ function headerObserver() {
         getHeaderForBackground.classList.remove("header-scroll-day");
          }
         }  
-}
+    }
+
 
 
 // Namn och intersection funktionen

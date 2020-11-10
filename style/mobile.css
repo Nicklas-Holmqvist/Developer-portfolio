@@ -1,7 +1,7 @@
 @media (max-width: 48em) {
     
     .header-mobile {
-        background: #141414ee;
+        background: #3e4251ee;
         box-shadow: 1px 1px 5px #3e425155,
                     1px 1px 2px #00000022;
     }
@@ -108,11 +108,6 @@
     .simple-math-text a {
         align-self: flex-start;
     } 
-
-    .simple-math-text h4, p, a {
-        color: var(--darkgrey);
-        text-align: left!important;
-    }
 
     .portfolio-img {
     height: 20rem;
