@@ -5,7 +5,7 @@ window.onload = main;
 /** An collectionfunction that starts at window.onload  */
 function main() {
     // Change the backgroundcolor of the page.
-    // setInterval(changeTheme, 60000);
+    setInterval(changeTheme, 60000);
     changeTheme()
 }
 
@@ -19,7 +19,7 @@ function changeTheme() {
     // Get the hour to use in a IF to change the theme of the page.    
 
     // Change the backgroundcolor at specific hours.
-    if (theHour <= 7 || theHour >= 22) {
+    if (theHour <= 7 || theHour >= 18) {
         darkMode()            
     }
     else {
@@ -47,7 +47,7 @@ function headerObserver() {
         return;
     }
 
-    else if (theHour <= 7 || theHour >= 22) {
+    else if (theHour <= 7 || theHour >= 18) {
         darkModeHeader() 
     }
 
