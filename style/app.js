@@ -5,7 +5,7 @@ window.onload = main;
 /** Varibles for the global scope */
 let changeBackground = document.querySelector('body');
 const changeHeroImages = document.querySelector('.hero-section');
-const changeLogo = document.querySelector('.logo > img');
+const changeLogo = document.querySelector('.logo img');
 const changeMark = document.querySelector('mark');
 const changeH1 = document.querySelector('H1');
 const getBtnOne = document.querySelector('.hero-btn-one');
@@ -173,6 +173,8 @@ function changeMathiDay() {
     });
    }
 
+
+
 // function setMobileheaderDark() {
 //     getMobileHeader.style.backgroundColor = "#141414ee";
 // }
@@ -196,7 +198,7 @@ function changeBackgroundColor() {
     
 
     // Change the backgroundcolor at specific hours.
-    if (theHour <= 7 || theHour >= 19) {
+    if (theHour <= 7 || theHour >= 22) {
         changeBackground.style.background = "var(--darkgrey)";
         changeHeroImages.style.backgroundImage = "url('./style/img/hero-background-dark.png')";
         listItemDark();
@@ -353,7 +355,7 @@ function headerObserver() {
         return;
     }
 
-    else if (theHour <= 7 || theHour >= 19) {
+    else if (theHour <= 7 || theHour >= 22) {
 
         //Vet inte hur jag ska få till en IF här. Vad ska den känna av. Kevin Powell funkar nere.
         if (!getHeaderForBackground.classList.contains("header-scroll-dark")) {

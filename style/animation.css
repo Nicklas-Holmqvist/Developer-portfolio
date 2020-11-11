@@ -54,6 +54,13 @@
     animation: animationHeader 2.5s ease-in forwards;  
 }
 
+.animation-header-soc4 {
+    transform: translateY(-5rem);
+    opacity: 0;
+
+    animation: animationHeader 2.6s ease-in forwards;  
+}
+
 .animation-hero-h1 {
     transform: translateY(-5rem);
     opacity: 0;
