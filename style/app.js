@@ -91,19 +91,41 @@ for (let i = 0; i < getAllDesktopLi.length; i++) {
 
 const getAllMobileLi = document.querySelectorAll('.ul-mobile li');
     
+    for (let i = 0; i < getAllMobileLi.length; i++) {    
+        getAllMobileLi[i].addEventListener('mouseover', function(event) {
+            event.target.style.background = "var(--white)";
+            event.target.style.color = "var(--darkgrey)";
+        });
+    }
+    
+
+    for (let i = 0; i < getAllMobileLi.length; i++) {        
+        getAllMobileLi[i].addEventListener('mouseout', function(event) {
+        event.target.style.background = "unset";
+        event.target.style.color = "var(--white)";
+    });
+    }
+
     for (let i = 0; i < getAllMobileLi.length; i++) {
         getAllMobileLi[i].addEventListener('mouseover', function(event) {
             event.target.style.background = "var(--white)";
             event.target.style.color = "var(--darkgrey)";
         });
     }
+    
+    
         
     for (let i = 0; i < getAllMobileLi.length; i++) {
         getAllMobileLi[i].addEventListener('mouseout', function(event) {
         event.target.style.background = "unset";
         event.target.style.color = "var(--white)";
     });
-    }   
+    } 
+    
+
+    
+
+
 for (let i = 0; i <getAllMobileLi.length; i++) {
     getAllMobileLi[i].addEventListener('click', openHamburger)
 }
@@ -160,7 +182,7 @@ function changeBackgroundColor() {
     
 
     // Change the backgroundcolor at specific hours.
-    if (theHour <= 7 || theHour >= 22) {
+    if (theHour <= 7 || theHour >= 19) {
         changeBackground.style.background = "var(--darkgrey)";
         changeHeroImages.style.backgroundImage = "url('./style/img/hero-background-dark.png')";
         listItemDark();
@@ -303,7 +325,7 @@ function headerObserver() {
         return;
     }
 
-    else if (theHour <= 7 || theHour >= 22) {
+    else if (theHour <= 7 || theHour >= 19) {
 
         //Vet inte hur jag ska få till en IF här. Vad ska den känna av. Kevin Powell funkar nere.
         if (!getHeaderForBackground.classList.contains("header-scroll-dark")) {
