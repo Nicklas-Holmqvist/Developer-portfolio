@@ -1,7 +1,7 @@
 @media (max-width: 48em) {
     
     .header-mobile {
-        background: #3e4251ee;
+        background: transparent;
         box-shadow: 1px 1px 5px #3e425155,
                     1px 1px 2px #00000022;
     }

@@ -11,7 +11,7 @@ const changeH1 = document.querySelector('H1');
 const getBtnOne = document.querySelector('.hero-btn-one');
 const getBtnTwo = document.querySelector('.hero-btn-two');
 const getParagraph = document.querySelectorAll('body > p');
-// const getMobileHeader = document.querySelector('.header-mobile');
+const getMobileHeader = document.querySelector('.header-mobile');
 const getNavMobile = document.querySelector('.nav-mobile');
 const getNavMobileSocial = document.querySelectorAll('.nav-mobile i');
 const getMathText = document.querySelectorAll('.simple-math-text p, h4');
@@ -62,6 +62,18 @@ function leaveALink() {
     getBtnOne.style.backgroundColor = "var(--middlegrey)";
 }
 
+getBtnTwo.addEventListener('mouseover', hoverALinkTwo);
+getBtnTwo.addEventListener('mouseout', leaveALinkTwo);
+
+function hoverALinkTwo() {
+    getBtnTwo.style.backgroundColor = "var(--white)";
+}
+
+function leaveALinkTwo() {
+    getBtnTwo.style.color = "var(--white)";
+    getBtnTwo.style.backgroundColor = "var(--grey";
+}
+
 getMathBtn.addEventListener('mouseover', hoverALinkMath);
 getMathBtn.addEventListener('mouseout', leaveALinkMath);
 
@@ -90,7 +102,8 @@ for (let i = 0; i < getAllDesktopLi.length; i++) {
 }
 
 const getAllMobileLi = document.querySelectorAll('.ul-mobile li');
-    
+  
+/*
     for (let i = 0; i < getAllMobileLi.length; i++) {    
         getAllMobileLi[i].addEventListener('mouseover', function(event) {
             event.target.style.background = "var(--white)";
@@ -112,19 +125,13 @@ const getAllMobileLi = document.querySelectorAll('.ul-mobile li');
             event.target.style.color = "var(--darkgrey)";
         });
     }
-    
-    
-        
     for (let i = 0; i < getAllMobileLi.length; i++) {
         getAllMobileLi[i].addEventListener('mouseout', function(event) {
         event.target.style.background = "unset";
         event.target.style.color = "var(--white)";
     });
     } 
-    
-
-    
-
+    */
 
 for (let i = 0; i <getAllMobileLi.length; i++) {
     getAllMobileLi[i].addEventListener('click', openHamburger)
@@ -166,7 +173,14 @@ function changeMathiDay() {
     });
    }
 
-   console.log(getNavMobileSocial);
+// function setMobileheaderDark() {
+//     getMobileHeader.style.backgroundColor = "#141414ee";
+// }
+
+// function setMobileheaderDay() {
+//     getMobileHeader.style.backgroundColor = "#efefefee";
+// }
+   
 
 
 
@@ -196,8 +210,9 @@ function changeBackgroundColor() {
         changeNavMobileDark()
         changeMobilLiDark()
         changeMobilSocDark()
-        changeMathdark()
-        changeMathiDark()
+        changeMathDark()
+        changeBtnTwoDark()
+        // setMobileheaderDark()
         
         
     }
@@ -217,6 +232,8 @@ function changeBackgroundColor() {
         changeMobilSocDay()
         changeMobilLiDay()
         changeMathiDay()
+        changeBtnTwoDay()
+        // setMobileheaderDay()
     }
 
     return theHour
@@ -294,9 +311,19 @@ function changeBtnOneDay() {
     getBtnOne.style.borderColor = "var(--beige)";
 }
 
-function changeMathdark() {
-    getMathText.style.color = "var(--white)";
+function changeBtnTwoDark() {
+    getBtnTwo.style.color = "var(--white)";
+    getBtnTwo.style.background = "var(--grey)";
 }
+
+function changeBtnTwoDay() {
+    getBtnTwo.style.color = "var(--white)";
+    getBtnTwo.style.background = "var(--grey)";
+}
+
+// function changeMathdark() {
+//     getMathText.style.color = "var(--white)";
+// }
 
 function changeMathday() {
     getMathText.style.color = "var(--darkgrey)";
@@ -314,7 +341,8 @@ const getHeroSection = document.querySelector('.hero-section');
 // Inställningar för interaction
 //Här finns root, rootMargin och treshold
 const optionsHeaderObserver = {
-    rootMargin: "-250px"
+    treshold: .5
+    // rootMargin: "-250px"
 };
 
 // Funktion för intersection

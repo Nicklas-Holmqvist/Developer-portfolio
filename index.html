@@ -31,15 +31,15 @@
         
         <div class="nav-mobile no-desktop dark day flex column center">
             <ul class="flex column ul-mobile width">
-                <a href="/"><li>Hem</li></a>
-                <a href="/"><li>Portfolio</li></a>
+                <a href="#top"><li>Hem</li></a>
+                <a href="#portfolio"><li>Portfolio</li></a>
                 <a href="#about-me"><li>Om mig</li></a>
-                <a href="/"><li>Kontakta</li></a>
+                <a href="mailto:nicklas_holmqvist@outlook.com"><li>Kontakta</li></a>
             </ul>
             <div class="mobile-social-header">
-                <i class="fas fa-mobile-alt"></i>
-                <i class="fas fa-envelope"></i>
-                <i class="fab fa-instagram-square"></i>
+                <a href="tel:+46706700883"><i class="fas fa-mobile-alt"></i></a>
+                <a href="mailto:nicklas_holmqvist@outlook.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.instagram.com/nicklas.holmqvist/"><i class="fab fa-instagram-square"></i></a>
             </div> 
         </div>
         <div class="nav-header max-width flex row between center">
@@ -53,28 +53,28 @@
             </div>    
             <nav class="flex-2">
                 <ul class="flex row between align-center ul-desktop">
-                    <li class="day dark animation-header-li1"><a href="/">Hem</a></li>
-                    <li class="day dark animation-header-li2"><a href="/">Portfolio</a></li>
+                    <li class="day dark animation-header-li1"><a href="#top">Hem</a></li>
+                    <li class="day dark animation-header-li2"><a href="#portfolio">Portfolio</a></li>
                     <li class="day dark animation-header-li3"><a href="#about-me">Om mig</a></li>
-                    <li class="day dark animation-header-li4"><a href="/">Kontakta</a></li>
+                    <li class="day dark animation-header-li4"><a href="mailto:nicklas_holmqvist@outlook.com" target="_blank">Kontakta</a></li>
                 </ul>
             </nav>   
             <div class="social-header flex flex-1 flex-end">
-                <i class="fas fa-mobile-alt day dark animation-header-soc1"></i>
-                <i class="fas fa-envelope day dark animation-header-soc2"></i>
-                <i class="fab fa-instagram-square day dark animation-header-soc3"></i>
+                <a href="tel:+46706700883"><i class="fas fa-mobile-alt day dark animation-header-soc1"></i></a>
+                <a href="mailto:nicklas_holmqvist@outlook.com"><i class="fas fa-envelope day dark animation-header-soc2"></i></a>
+                <a href="https://www.instagram.com/nicklas.holmqvist/"><i class="fab fa-instagram-square day dark animation-header-soc3"></i></a>
             </div> 
         </div>
     </header>
-    <main class="width height">
+    <main class="width height" id="top">
         <div class="hero-section width">
             <div class="hero-container flex height max-width">
                 <div class="hero-text-container flex column">
                     <h1 class="animation-hero-h1">Jag är Nicklas Holmqvist</h1>
                     <h3 class="animation-hero-h3"><mark>"Rent, avskalat men ändå en touch av snygga detaljer"</mark></h3>
                     <div class="hero-btn flex row width flex-end ">
-                        <a href="/" class="hero-btn-one btn flex center animation-hero-btn-left">Se min Portfolio</a>
-                        <a href="/" class="hero-btn-two btn flex center animation-hero-btn-right">Kontakta mig</a>
+                        <a href="#portfolio" class="hero-btn-one btn flex center animation-hero-btn-left">Se min Portfolio</a>
+                        <a href="mailto:nicklas_holmqvist@outlook.com" class="hero-btn-two btn flex center animation-hero-btn-right">Kontakta mig</a>
                     </div>                
                 </div>
             </div>
@@ -95,7 +95,7 @@
                 </div>
             </div>
         </div>
-        <div class="portfolio-section flex column">
+        <div class="portfolio-section flex column" id="portfolio">
             <div class="portfolio-container portfolio-container-1 flex-1 animation-content-sections">
                 <div class="portfolio-item max-width flex row height">
                     <div class="portfolio-text flex flex-1 column">
@@ -129,7 +129,7 @@
             <div class="portfolio-container portfolio-container-3 animation-content-sections flex-1">
                 <div class="portfolio-item max-width flex row height">
                     <div class="portfolio-text pandora-text flex flex-1 column">
-                        <h4>Pandora</h4>
+                        <h4 class="pandora-h4">Pandora</h4>
                         <p>Pandora är en väldigt kort Tell Tail i en snygg bildspel layout.</p>
                         <p>Jag har använt mig av färgerna i bakgrundsbilden för att färglägga alla mina html-objekt. Allt för att få en enhetlig känsla.</p>
                         <a href="https://www.nicklasholmqvist.se/portfolio/laboration-1/index.html" class="portfolio-btn btn" target="_blank">Kan du överleva?</a>
