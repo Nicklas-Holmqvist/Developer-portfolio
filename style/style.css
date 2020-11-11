@@ -185,10 +185,7 @@ h4 {
 
 .nav-header i {
     font-size: 1.1rem;
-    margin-left: .2rem;
-    padding: 1rem;
-    border: 1px transparent solid;
-    border-radius: 15rem;
+    margin-left: 1rem;
 
     transition: all .5s ease;
 }

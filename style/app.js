@@ -2,6 +2,124 @@
 /** Function to start when loading the page */
 window.onload = main;
 
+/** An collectionfunction that starts at window.onload  */
+function main() {
+    // Change the backgroundcolor of the page.
+    // setInterval(changeTheme, 60000);
+    changeTheme()
+}
+
+/** Change colors of the page when the evening begins and change back at the morning.
+ * It is an automatic nightmode.
+ */
+const theHour = new Date().getHours();
+
+function changeTheme() {
+    
+    // Get the hour to use in a IF to change the theme of the page.    
+
+    // Change the backgroundcolor at specific hours.
+    if (theHour <= 7 || theHour >= 22) {
+        darkMode()            
+    }
+    else {
+        dayMode()
+    }
+    return theHour
+}
+
+// Vad intersection ska ändra, om headern ska få bakgrundsfärg eller dylikt
+const getHeaderForBackground = document.querySelector('#header');
+// Vad interaction ska känna av, vad ska komma in på skärmen för att köra funktionen
+const getHeroSection = document.querySelector('.hero-section');
+
+// Inställningar för interaction
+//Här finns root, rootMargin och treshold
+const optionsHeaderObserver = {
+    treshold: .5
+};
+
+// Funktion för intersection
+// Funktionen som kommer köras vid händelsen
+function headerObserver() {
+    //getHeaderForBackground.classList.toggle("header-scroll");
+    if (window.scrollY == 0 || window.top == 0) {
+        return;
+    }
+
+    else if (theHour <= 7 || theHour >= 22) {
+        darkModeHeader() 
+    }
+
+    else  {     
+        dayModeHeader()  
+    }  
+}
+
+function darkMode() {
+    changeBackground.style.background = "var(--darkgrey)";
+    changeHeroImages.style.backgroundImage = "url('./style/img/hero-background-dark.png')";
+    listItemDark();
+    changeLogo.src = "./style/img/logo-darkmode.png"
+    changeMark.style.color = "var(--darkgrey)";
+    changeMark.style.background = "var(--white)";
+    changeH1.style.color = "var(--white)";
+    btnDark()
+    changeBtnOneDark();
+    hamburgerDark();
+    changeNavMobileDark()
+    changeMobilLiDark()
+    changeMobilSocDark()
+    changeMathDark()
+    changeBtnTwoDark()   
+}
+
+function dayMode() {
+    changeBackground.style.background = "var(--white)";
+    changeHeroImages.style.backgroundImage = "url('./style/img/hero-background-day.png')";
+    changeLogo.src = "./style/img/logo-daymode.png"
+    changeMark.style.color = "var(--white)";
+    changeMark.style.background = "var(--darkgrey)";
+    changeH1.style.color = "var(--darkgrey)";
+    listItemDay();
+    btnDay()
+    changeBtnOneDay()
+    hamburgerDay()
+    changeNavMobileDay()        
+    changeMobilSocDay()
+    changeMobilLiDay()
+    changeMathiDay()
+    changeBtnTwoDay()
+    
+}
+
+function darkModeHeader() {
+    if (!getHeaderForBackground.classList.contains("header-scroll-dark")) {
+        getHeaderForBackground.classList.add("header-scroll-dark");
+        }
+        else {
+        getHeaderForBackground.classList.remove("header-scroll-dark");
+    }    
+}
+
+function dayModeHeader() {
+    if (!getHeaderForBackground.classList.contains("header-scroll-day")) {
+        getHeaderForBackground.classList.add("header-scroll-day");
+        }
+        else {
+        getHeaderForBackground.classList.remove("header-scroll-day");
+        }
+}
+
+
+
+// Namn och intersection funktionen
+// Här skapas intersection. new Inter... måste innehålla funktionen och option för Intersection
+const headerObserverTrigger = new IntersectionObserver(headerObserver, optionsHeaderObserver);
+
+// intersection namnet.observe funktion + vad som ska observeras
+headerObserverTrigger.observe(getHeroSection);
+
 /** Varibles for the global scope */
 let changeBackground = document.querySelector('body');
 const changeHeroImages = document.querySelector('.hero-section');
@@ -16,21 +134,13 @@ const getNavMobile = document.querySelector('.nav-mobile');
 const getNavMobileSocial = document.querySelectorAll('.nav-mobile i');
 const getMathText = document.querySelectorAll('.simple-math-text p, h4');
 const getMathBtn = document.querySelector('.math-btn');
-
+const getChangeNight = document.querySelector('#night');
+const getChangeDay = document.querySelector('#day');
 
 const getHamburgerButton = document.querySelector('.hamburger');
 const openMenu = document.querySelector('.nav-mobile');
 
-
 getHamburgerButton.addEventListener('click', openHamburger);
-
-
-/** An collectionfunction that starts at window.onload  */
-function main() {
-    // Change the backgroundcolor of the page.
-    setInterval(changeBackgroundColor, 60000);
-    changeBackgroundColor()
-}
 
 // Links
 
@@ -103,36 +213,6 @@ for (let i = 0; i < getAllDesktopLi.length; i++) {
 
 const getAllMobileLi = document.querySelectorAll('.ul-mobile li');
   
-/*
-    for (let i = 0; i < getAllMobileLi.length; i++) {    
-        getAllMobileLi[i].addEventListener('mouseover', function(event) {
-            event.target.style.background = "var(--white)";
-            event.target.style.color = "var(--darkgrey)";
-        });
-    }
-    
-
-    for (let i = 0; i < getAllMobileLi.length; i++) {        
-        getAllMobileLi[i].addEventListener('mouseout', function(event) {
-        event.target.style.background = "unset";
-        event.target.style.color = "var(--white)";
-    });
-    }
-
-    for (let i = 0; i < getAllMobileLi.length; i++) {
-        getAllMobileLi[i].addEventListener('mouseover', function(event) {
-            event.target.style.background = "var(--white)";
-            event.target.style.color = "var(--darkgrey)";
-        });
-    }
-    for (let i = 0; i < getAllMobileLi.length; i++) {
-        getAllMobileLi[i].addEventListener('mouseout', function(event) {
-        event.target.style.background = "unset";
-        event.target.style.color = "var(--white)";
-    });
-    } 
-    */
-
 for (let i = 0; i <getAllMobileLi.length; i++) {
     getAllMobileLi[i].addEventListener('click', openHamburger)
 }
@@ -173,73 +253,7 @@ function changeMathiDay() {
     });
    }
 
-
-
-// function setMobileheaderDark() {
-//     getMobileHeader.style.backgroundColor = "#141414ee";
-// }
-
-// function setMobileheaderDay() {
-//     getMobileHeader.style.backgroundColor = "#efefefee";
-// }
-   
-
-
-
 console.log(getAllMobileLi)
-/** Change colors of the page when the evening begins and change back at the morning.
- * It is an automatic nightmode.
- */
-const theHour = new Date().getHours();
-
-function changeBackgroundColor() {
-    
-    // Get the hour to use in a IF to change the theme of the page.
-    
-
-    // Change the backgroundcolor at specific hours.
-    if (theHour <= 7 || theHour >= 22) {
-        changeBackground.style.background = "var(--darkgrey)";
-        changeHeroImages.style.backgroundImage = "url('./style/img/hero-background-dark.png')";
-        listItemDark();
-        changeLogo.src = "./style/img/logo-darkmode.png"
-        changeMark.style.color = "var(--darkgrey)";
-        changeMark.style.background = "var(--white)";
-        changeH1.style.color = "var(--white)";
-        btnDark()
-        changeBtnOneDark();
-        hamburgerDark();
-        changeNavMobileDark()
-        changeMobilLiDark()
-        changeMobilSocDark()
-        changeMathDark()
-        changeBtnTwoDark()
-        // setMobileheaderDark()
-        
-        
-    }
-
-    else {
-        changeBackground.style.background = "var(--white)";
-        changeHeroImages.style.backgroundImage = "url('./style/img/hero-background-day.png')";
-        changeLogo.src = "./style/img/logo-daymode.png"
-        changeMark.style.color = "var(--white)";
-        changeMark.style.background = "var(--darkgrey)";
-        changeH1.style.color = "var(--darkgrey)";
-        listItemDay();
-        btnDay()
-        changeBtnOneDay()
-        hamburgerDay()
-        changeNavMobileDay()        
-        changeMobilSocDay()
-        changeMobilLiDay()
-        changeMathiDay()
-        changeBtnTwoDay()
-        // setMobileheaderDay()
-    }
-
-    return theHour
-}
 
 function listItemDark() {
  const getDarkClass = document.querySelectorAll(".dark");
@@ -323,10 +337,6 @@ function changeBtnTwoDay() {
     getBtnTwo.style.background = "var(--grey)";
 }
 
-// function changeMathdark() {
-//     getMathText.style.color = "var(--white)";
-// }
-
 function changeMathday() {
     getMathText.style.color = "var(--darkgrey)";
 }
@@ -334,56 +344,6 @@ function changeMathday() {
 function openHamburger() {
     openMenu.classList.toggle("hamburger-open"); 
 }
-
-// Vad intersection ska ändra, om headern ska få bakgrundsfärg eller dylikt
-const getHeaderForBackground = document.querySelector('#header');
-// Vad interaction ska känna av, vad ska komma in på skärmen för att köra funktionen
-const getHeroSection = document.querySelector('.hero-section');
-
-// Inställningar för interaction
-//Här finns root, rootMargin och treshold
-const optionsHeaderObserver = {
-    treshold: .5
-    // rootMargin: "-250px"
-};
-
-// Funktion för intersection
-// Funktionen som kommer köras vid händelsen
-function headerObserver() {
-    //getHeaderForBackground.classList.toggle("header-scroll");
-    if (window.scrollY == 0) {
-        return;
-    }
-
-    else if (theHour <= 7 || theHour >= 22) {
-
-        //Vet inte hur jag ska få till en IF här. Vad ska den känna av. Kevin Powell funkar nere.
-        if (!getHeaderForBackground.classList.contains("header-scroll-dark")) {
-            getHeaderForBackground.classList.add("header-scroll-dark");
-            }
-            else {
-            getHeaderForBackground.classList.remove("header-scroll-dark");
-        }
-    }
-
-    else  {        
-        if (!getHeaderForBackground.classList.contains("header-scroll-day")) {
-        getHeaderForBackground.classList.add("header-scroll-day");
-        }
-        else {
-        getHeaderForBackground.classList.remove("header-scroll-day");
-         }
-        }  
-    }
-
-
-
-// Namn och intersection funktionen
-// Här skapas intersection. new Inter... måste innehålla funktionen och option för Intersection
-const headerObserverTrigger = new IntersectionObserver(headerObserver, optionsHeaderObserver);
-
-// intersection namnet.observe funktion + vad som ska observeras
-headerObserverTrigger.observe(getHeroSection);
 
 // Add Intersection Observer to my content
 
