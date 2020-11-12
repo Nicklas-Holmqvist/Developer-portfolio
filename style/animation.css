@@ -1,3 +1,10 @@
+
+/* 
+
+ANIMATION CLASSES  
+
+*/
+
 .animation-header-logo {
     transform: translateY(-5rem);
     opacity: 0;
@@ -99,6 +106,12 @@
 
     animation: animateContentSections .5s ease-in;
 }
+
+/* 
+
+ANIMATION KEYFRAMES
+
+*/
 
 @keyframes animationHeader {
     0% {

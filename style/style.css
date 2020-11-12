@@ -1,12 +1,5 @@
 
-/* font */
-/* Ren font */
-/* font-family: 'Noto Sans JP', sans-serif; */
-/* Stilig font */
-/* font-family: 'Cormorant Garamond', serif; */
-/* Mjuk font */
-/* font-family: 'Be Vietnam', sans-serif; */
-
+/* CSS VARIBLES */
 :root {
     --darkgrey: #141414;
     --middlegrey: #3e4251;
@@ -15,6 +8,7 @@
     --white: #efefef;
 }
 
+/* BASIC STYLING */
 * {
     margin: 0;
     padding: 0;
@@ -25,6 +19,7 @@ body {
     overflow-x: hidden;
 }
 
+/* RE-USEABLE CLASSES */
 .no-desktop {
     display: none;
 }
@@ -99,6 +94,8 @@ body {
 .text-center {
     text-align: center;
 }
+
+/* OVERALL STANDARD STYLING */
 
 .ul-desktop {
     list-style: none;
@@ -199,6 +196,8 @@ h4 {
     transition: all .5s ease;
 }
 
+/* HEADER STYLING */
+
 header {
     position: fixed;
     top: 0;
@@ -255,7 +254,6 @@ nav {
     height: 2px;
 }
 
-
 .nav-mobile {
     position: fixed;
     top: 0;
@@ -290,8 +288,13 @@ nav {
     color: var(--white);
 }
 
+/* MAIN STYLING */
+
+/* HERO SECTION */
+
 .hero-section {
     height: 60rem;
+    
     background-image: url(./img/hero-background.png);
     background-position: center;
     background-repeat: no-repeat;
@@ -303,8 +306,11 @@ nav {
 
 .hero-text-container {
     justify-content: center;
+
     width: 100%;
+
     padding-bottom: 8rem;
+
     text-align: end;
 }
 
@@ -316,10 +322,11 @@ nav {
 
 .hero-btn-one {
     font-weight: 600;
+
     margin-right: 1.5rem;
+
     color: var(--darkgrey);
-    background: var(--white);
-    
+    background: var(--white);    
 }
 
 .hero-btn-two {
@@ -329,8 +336,11 @@ nav {
 mark{
     background: var(--grey);
     color: var(--white);   
+
     padding: .1rem .3rem .3rem .3rem; 
 }
+
+/* WHAT MAKES A GOOD PAGE SECTION */
 
 .what-makes-a-good-page-section {
     padding: 4rem 2rem;
@@ -341,59 +351,22 @@ mark{
     padding-left: 3rem;
 }
 
+/* PORTFOLIO SECTION */
+
 .portfolio-container {
     height: 30rem;
-}
-
-.portfolio-text {
-    padding: 0 2rem;
-    justify-content: center;
-}
-
-.upplev-h4 {
-    color: var(--middlegrey)!important;
-}
-
-.portfolio-container-1 {
-    background: #E1BC81;
-}
-
-.upplev-btn {
-    color: var(--middlegrey)!important;
-}
-
-.simple-math-text > p, h4 {
-    color: var(--white);
-}
-
-.simple-math-text a {
-    align-self: flex-end;
-}
-
-.math-img {
-    box-shadow: none!important;
-}
-
-.math-btn {
-    background: #FF9F1C;
-    color: var(--white);
-}
-
-.portfolio-container-3{
-    background: #D32956;    
-}
-
-.pandora-text > p{
-    color: var(--white);    
-}
-
-.pandora-h4 {
-    color: var(--white)!important;
 }
 
 .portfolio-item {
     height: 100%;
     padding: 4rem 0;
+}
+
+.portfolio-item a {
+    align-self: flex-start;
+}
+.portfolio-item .btn {
+    margin-top: 1.5rem;   
 }
 
 .portfolio-img {
@@ -412,14 +385,59 @@ mark{
     object-position: center;    
 }
 
-.portfolio-item a {
-    align-self: flex-start;
-}
-.portfolio-item .btn {
-    margin-top: 1.5rem;   
+.portfolio-text {
+    padding: 0 2rem;
+    justify-content: center;
 }
 
+/* PORTFOLIO 1 */
 
+.upplev-h4 {
+    color: var(--middlegrey)!important;
+}
+
+.portfolio-container-1 {
+    background: #E1BC81;
+}
+
+.upplev-btn {
+    color: var(--middlegrey)!important;
+}
+
+/* PORTFOLIO 2 */
+
+.simple-math-text > p, h4 {
+    color: var(--white);
+}
+
+.simple-math-text a {
+    align-self: flex-end;
+}
+
+.math-img {
+    box-shadow: none!important;
+}
+
+.math-btn {
+    background: #FF9F1C;
+    color: var(--white);
+}
+
+/* PORTFOLIO 3 */
+
+.portfolio-container-3{
+    background: #D32956;    
+}
+
+.pandora-text > p{
+    color: var(--white);    
+}
+
+.pandora-h4 {
+    color: var(--white)!important;
+}
+
+/* ABOUT ME SECTION */
 
 .about-section {
     padding: 4rem 2rem;
@@ -433,6 +451,8 @@ mark{
 .about-section p {
     padding: .3rem 0;
 }
+
+/* FOOTER SECTION */
 
 footer {
     width: 100%;

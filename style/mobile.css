@@ -1,5 +1,7 @@
 @media (max-width: 48em) {
     
+    /* HEADER STYLING */
+
     .header-mobile {
         background: transparent;
         box-shadow: 1px 1px 5px #3e425155,
@@ -20,35 +22,31 @@
         display: flex;
     }
 
-    /* .hamburger:hover {
-        height: 3rem;
-        transform: rotate(90deg);
-        border: .5px var(--white) solid;
-        border-radius: 15rem;
-        overflow: hidden;
-    }     */
-
     .logo {
         text-align: center;
     }
 
-   nav {
-       display: none;
-   } 
+    nav {
+        display: none;
+    } 
 
-   .social-header {
+    .social-header {
        display: none;
-   }
-
-   .hero-section {
-    height: 55rem;
     }
 
-   .hero-text-container {
-       padding: 0 2rem;
-   }
+    /* MAIN STYLING */
 
-   .hero-section h1 {
+    /* HERO SECTION */
+
+    .hero-section {
+        height: 55rem;
+    }
+
+    .hero-text-container {
+       padding: 0 2rem;
+    }
+
+    .hero-section h1 {
        font-size: 3.5rem;
        text-align: right;
        margin: 0 auto;
@@ -56,20 +54,20 @@
        padding-bottom: 2rem;
    } 
 
-   .hero-section h3 {
+    .hero-section h3 {
        text-align: right;
        font-size: .7rem;
    } 
 
-   .hero-btn {
+    .hero-btn {
        justify-content: center;
        flex-direction: column;
 
        padding-top: 2rem;
    }
 
-   .hero-btn-one {
-    margin-right: 0;
+    .hero-btn-one {
+        margin-right: 0;
     }
 
     .hero-section .btn {
@@ -78,9 +76,11 @@
         width: 100%;
         align-self: flex-end;
     }
+
+    /* WHAT MAKES A GOOD PAGE SECTION */
     
-   .what-makes-a-good-page-section {
-    padding: 4rem 2rem;
+    .what-makes-a-good-page-section {
+        padding: 4rem 2rem;
     }
 
     .what-makes-content-text {
@@ -92,13 +92,15 @@
         padding-left: 0;
     }
 
+    /* PORTFOLIO SECTION */
+
    .portfolio-container {
-    height: auto;
+        height: auto;
     }
 
    .portfolio-item {
-    flex-direction: column;
-    padding: 4rem 0rem;
+        flex-direction: column;
+        padding: 4rem 0rem;
     }
 
     .portfolio-2 {
@@ -110,16 +112,18 @@
     } 
 
     .portfolio-img {
-    height: 20rem;
-    border-radius: unset;
+        height: 20rem;
+        border-radius: unset;
 
-    margin-top: 2rem;    
+        margin-top: 2rem;    
     }
 
     .portfolio-img img {
         border-radius: unset;
         overflow: visible;
-        }
+    }
+
+    /* ABOUT ME SECTION */
 
     .about-section {
         padding: 4rem 2rem;
@@ -137,6 +141,4 @@
     .about-text-right {
         padding-left: 0;
     }
-
-
 }

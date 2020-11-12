@@ -15,8 +15,9 @@ const theHour = new Date().getHours();
 
 /** Function to change between day- och darkmode at specific times */
 function changeTheme() {    
-    // Get the hour to use in a IF to change the theme of the page.    
-    if (theHour <= 7 || theHour >= 20) {
+    
+    //An if statement to rotate the day- and darkmode when the time is right
+    if (theHour <= 7 || theHour >= 18) {
         darkMode()            
     }
     else {
@@ -25,24 +26,24 @@ function changeTheme() {
     return theHour
 }
 
-// Vad intersection ska ändra, om headern ska få bakgrundsfärg eller dylikt
+/** Varible to get the header element id */
 const getHeaderForBackground = document.querySelector('#header');
-// Vad interaction ska känna av, vad ska komma in på skärmen för att köra funktionen
+
+/** Varible for the triggerpoint in the intersection for the header */
 const getHeroSection = document.querySelector('.hero-section');
 
-// Inställningar för interaction
-//Här finns root, rootMargin och treshold
+/** Settings within an object for the intersection to the header */
 const optionsHeaderObserver = {
     treshold: .5
 };
 
-/** Function to control the headers Intersection at specific times */
+/** Function to control the headers Intersection at specific times and mode */
 function headerObserver() {
     //getHeaderForBackground.classList.toggle("header-scroll");
     if (window.scrollY == 0 || window.top == 0) {
         return;
     }
-    else if (theHour <= 7 || theHour >= 20) {
+    else if (theHour <= 7 || theHour >= 18) {
         darkModeHeader() 
     }
     else  {     
@@ -119,7 +120,12 @@ const headerObserverTrigger = new IntersectionObserver(headerObserver, optionsHe
 // intersection what to intersect
 headerObserverTrigger.observe(getHeroSection);
 
-/** Varibles for the global scope */
+//
+//  VARIBLES FOR GLOBAL SCOPE
+//  
+//  There are more but they are connected to the functions more closely
+//
+
 /** Varible to get the body element */
 let changeBackground = document.querySelector('body');
 /** Varible to get the hero-section class */
@@ -154,7 +160,9 @@ const openMenu = document.querySelector('.nav-mobile');
 // Click on the hamburger button
 getHamburgerButton.addEventListener('click', openHamburger);
 
-// Links
+//
+// HOVER STYLING 
+//
 
 /** Varible to get all the .btn classes for the hover states and some styling */
 const getBtn = document.querySelectorAll(".btn");
@@ -262,7 +270,9 @@ for (let i = 0; i <getAllMobileLi.length; i++) {
     getAllMobileLi[i].addEventListener('click', openHamburger)
 }
 
-// Styling
+//
+//  STYLING
+//
 
 /** Darkmode function to change the styling of the icons in the mobile menu */
 function changeMobilSocDark() {   
@@ -325,15 +335,17 @@ function listItemDay() {
  });
 }
 
-
+/** Darkmode styling for backgroundcolor of the hamburger menu */  
 function changeNavMobileDark() {
     getNavMobile.style.backgroundColor = "#141414ee";
 }
 
+/** Daymode styling for backgroundcolor of the hamburger menu */  
 function changeNavMobileDay() {
     getNavMobile.style.backgroundColor = "#efefefee";
 }
 
+/** Darkmode styling for the hamburger button lines */ 
 function hamburgerDark() {
     const getHamburgerLines = document.querySelectorAll('.hamburger-line');
 
@@ -342,6 +354,7 @@ function hamburgerDark() {
     });
 }
 
+/** Daymode styling for the hamburger button lines */  
 function hamburgerDay() {
     const getHamburgerLines = document.querySelectorAll('.hamburger-line');
 
@@ -350,6 +363,7 @@ function hamburgerDay() {
     });
 }
 
+/** Darkmode styling for all the standard buttons */ 
 function btnDark() {
  const getBtn = document.querySelectorAll(".btn");
  console.log(getBtn);
@@ -360,6 +374,7 @@ function btnDark() {
  });
 }
 
+/** Daymode styling for all the standard buttons */  
 function btnDay() {
  const getBtn = document.querySelectorAll(".portfolio-btn");
  console.log(getBtn);
@@ -370,48 +385,66 @@ function btnDay() {
  });
 }
 
+/** Darkmode styling for first button in the hero-section */  
 function changeBtnOneDark() {
     getBtnOne.style.color = "var(--white)";
     getBtnOne.style.background = "var(--middlegrey)";
 }
 
+/** Daymode styling for first button in the hero-section */  
 function changeBtnOneDay() {
     getBtnOne.style.color = "var(--white)";
     getBtnOne.style.background = "var(--middlegrey)";
     getBtnOne.style.borderColor = "var(--beige)";
 }
 
+/** Darkmode styling for the second button in the hero-section */ 
 function changeBtnTwoDark() {
     getBtnTwo.style.color = "var(--white)";
     getBtnTwo.style.background = "var(--grey)";
 }
 
+/** Daymode styling for the second button in the hero-section */  
 function changeBtnTwoDay() {
     getBtnTwo.style.color = "var(--white)";
     getBtnTwo.style.background = "var(--grey)";
 }
 
+/** Daymode styling for the parapgraphs elements in the "simple addition" section */ 
 function changeMathday() {
     getMathText.style.color = "var(--darkgrey)";
 }
 
+/** Toggle function for the hamburger menu */
 function openHamburger() {
     openMenu.classList.toggle("hamburger-open"); 
 }
 
-// Add Intersection Observer to my content
+//
+// INTERSECTION FOR THE BODY
+//
+// The header intersection is on the top in this file
+//
 
+/** Varible to get the what-makes section class */
 const getWhatMakes = document.querySelector('.what-makes');
+/** Varible to get the first part of the portfolio section class */
 const getPortfolio1 = document.querySelector('.portfolio-container-1');
+/** Varible to get the second part of the portfolio section class */
 const getPortfolio2 = document.querySelector('.portfolio-container-2');
+/** Varible to get the third part of the portfolio section class */
 const getPortfolio3 = document.querySelector('.portfolio-container-3');
+/** Varible to get the about-me section class */
 const getAboutMe = document.querySelector('.about-section');
+/** Varible to get the footer section class */
 const getFooter = document.querySelector('footer');
 
+/** An object with settings for the Intersection, when they should trigger in relation to choosed class */
 const optionContentObserver = {
     treshold: .2
 }
 
+/** Interaction function to trigger the animation of the what-makes section */
 function whatMakesObserver () {
     if (window.scrollY == 0) {
         return;
@@ -419,10 +452,12 @@ function whatMakesObserver () {
     getWhatMakes.classList.add("animation-fadein")
 }
 
+/** Varible and a Interactionfunction for what-makes section */
 const whatMakesTrigger = new IntersectionObserver(whatMakesObserver, optionContentObserver);
 
 whatMakesTrigger.observe(getWhatMakes);
 
+/** Interaction function to trigger the animation of the first part of the portfolio section */
 function portfolio1Observer () {
     if (window.scrollY == 0) {
         return;
@@ -430,10 +465,12 @@ function portfolio1Observer () {
     getPortfolio1.classList.add("animation-fadein")
 }
 
+/** Varible and a Interactionfunction for the first part in the portfolio section */
 const portfolio1Trigger = new IntersectionObserver(portfolio1Observer, optionContentObserver);
 
 portfolio1Trigger.observe(getPortfolio1);
 
+/** Interaction function to trigger the animation of the second part of the portfolio section */
 function portfolio2Observer () {
     if (window.scrollY == 0) {
         return;
@@ -441,10 +478,12 @@ function portfolio2Observer () {
     getPortfolio2.classList.add("animation-fadein")
 }
 
+/** Varible and a Interactionfunction for the second part in the portfolio section */
 const portfolio2Trigger = new IntersectionObserver(portfolio2Observer, optionContentObserver);
 
 portfolio2Trigger.observe(getPortfolio2);
 
+/** Interaction function to trigger the animation of the third part of the portfolio section */
 function portfolio3Observer () {
     if (window.scrollY == 0) {
         return;
@@ -452,10 +491,12 @@ function portfolio3Observer () {
     getPortfolio3.classList.add("animation-fadein")
 }
 
+/** Varible and a Interactionfunction for the second part in the portfolio section */
 const portfolio3Trigger = new IntersectionObserver(portfolio3Observer, optionContentObserver);
 
 portfolio3Trigger.observe(getPortfolio3);
 
+/** Interaction function to trigger the animation of the about-me section */
 function getAboutMeObserver () {
     if (window.scrollY == 0) {
         return;
@@ -463,10 +504,12 @@ function getAboutMeObserver () {
     getAboutMe.classList.add("animation-fadein")
 }
 
+/** Varible and a Interactionfunction for the about-me section */
 const getAboutMeTrigger = new IntersectionObserver(getAboutMeObserver, optionContentObserver);
 
 getAboutMeTrigger.observe(getAboutMe);
 
+/** Interaction function to trigger the animation of the footer section */
 function getFooterObserver () {
     if (window.scrollY == 0) {
         return;        
@@ -474,6 +517,7 @@ function getFooterObserver () {
     getFooter.classList.add("animation-fadein")
 }
 
+/** Varible and a Interactionfunction for the footer section */
 const getfooterTrigger = new IntersectionObserver(getFooterObserver, optionContentObserver);
 
 getfooterTrigger.observe(getFooter);
