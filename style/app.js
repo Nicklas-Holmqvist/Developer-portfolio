@@ -134,6 +134,8 @@ const getNavMobile = document.querySelector('.nav-mobile');
 const getNavMobileSocial = document.querySelectorAll('.nav-mobile i');
 const getMathText = document.querySelectorAll('.simple-math-text p, h4');
 const getMathBtn = document.querySelector('.math-btn');
+const getUpplevBtn = document.querySelector('.upplev-btn');
+
 const getChangeNight = document.querySelector('#night');
 const getChangeDay = document.querySelector('#day');
 
@@ -182,6 +184,19 @@ function hoverALinkTwo() {
 function leaveALinkTwo() {
     getBtnTwo.style.color = "var(--white)";
     getBtnTwo.style.backgroundColor = "var(--grey";
+}
+
+getUpplevBtn.addEventListener('mouseover', hoverALinkUpplev);
+getUpplevBtn.addEventListener('mouseout', leaveALinkUpplev);
+
+function hoverALinkUpplev() {
+    getUpplevBtn.style.backgroundcolor = "var(--white)";
+    getUpplevBtn.style.color = "var(--darkgrey)";
+}
+
+function leaveALinkUpplev() {
+    getUpplevBtn.style.color = "var(--darkgrey)";
+    getUpplevBtn.style.backgroundColor = "#FF9F1C";
 }
 
 getMathBtn.addEventListener('mouseover', hoverALinkMath);
@@ -352,6 +367,7 @@ const getPortfolio1 = document.querySelector('.portfolio-container-1');
 const getPortfolio2 = document.querySelector('.portfolio-container-2');
 const getPortfolio3 = document.querySelector('.portfolio-container-3');
 const getAboutMe = document.querySelector('.about-section');
+const getFooter = document.querySelector('footer');
 
 const optionContentObserver = {
     treshold: .2
@@ -411,3 +427,14 @@ function getAboutMeObserver () {
 const getAboutMeTrigger = new IntersectionObserver(getAboutMeObserver, optionContentObserver);
 
 getAboutMeTrigger.observe(getAboutMe);
+
+function getFooterObserver () {
+    if (window.scrollY == 0) {
+        return;        
+    }
+    getFooter.classList.add("animation-fadein")
+}
+
+const getfooterTrigger = new IntersectionObserver(getFooterObserver, optionContentObserver);
+
+getfooterTrigger.observe(getFooter);

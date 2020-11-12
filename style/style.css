@@ -358,6 +358,10 @@ mark{
     background: #E1BC81;
 }
 
+.upplev-btn {
+    color: var(--middlegrey)!important;
+}
+
 .simple-math-text > p, h4 {
     color: var(--white);
 }
