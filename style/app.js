@@ -136,8 +136,6 @@ function dayModeHeader() {
 /** Varible to a new Intersection for "headerObserver" */
 const headerObserverTrigger = new IntersectionObserver(headerObserver, optionsHeaderObserver);
 
-
-
 //
 //  VARIBLES FOR GLOBAL SCOPE
 //  
