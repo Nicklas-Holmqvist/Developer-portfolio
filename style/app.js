@@ -6,6 +6,7 @@ function main() {
     // Change the backgroundcolor of the page.
     setInterval(changeTheme, 60000);
     changeTheme()
+    initScrollBehaviour()
 }
 
 /** Change colors of the page when the evening begins and change back at the morning.
@@ -268,6 +269,16 @@ const getAllMobileLi = document.querySelectorAll('.ul-mobile li');
 /** A for loop to close the hamburger menu when click the mobile li objects */
 for (let i = 0; i <getAllMobileLi.length; i++) {
     getAllMobileLi[i].addEventListener('click', openHamburger)
+}
+
+/** Smooth scroll script for inline links
+ * Speed change of the time to get where you want 
+ * Copied from the lesson material from David
+ */
+function initScrollBehaviour() {
+    let scroll = new SmoothScroll('a[href*="#"]', {
+        speed: 500
+    });
 }
 
 //
