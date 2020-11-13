@@ -26,4 +26,4 @@ To my own domain page
 [Link](https://www.nicklasholmqvist.se/test/portfolio/index.html)
 
 To my Github pages
-[Link](https://nicklas-holmqvist.github.io/my-portfolio/#about-me)
+[Link](https://nicklas-holmqvist.github.io/my-portfolio)
