@@ -19,7 +19,7 @@ const theHour = new Date().getHours();
 function changeTheme() {    
     
     //An if statement to rotate the day- and darkmode when the time is right
-    if (theHour <= 7 || theHour >= 18) {
+    if (theHour <= 11 || theHour >= 18) {
         darkMode()            
     }
     else {
@@ -45,7 +45,7 @@ function headerObserver() {
     if (window.scrollY == 0 || window.top == 0) {
         return;
     }
-    else if (theHour <= 7 || theHour >= 18) {
+    else if (theHour <= 11 || theHour >= 18) {
         darkModeHeader() 
     }
     else  {     
