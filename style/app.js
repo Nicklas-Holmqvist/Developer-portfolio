@@ -3,23 +3,40 @@ window.onload = main;
 
 /** An collectionfunction that starts at window.onload  */
 function main() {
-    // Change the backgroundcolor of the page.
     setInterval(changeTheme, 60000);
     changeTheme()
     initScrollBehaviour()
     intersectionFunctions ()
+    headerObserverTrigger.observe(getHeroSection);
 }
+
+/*
+
+    Main section in file
+    1. Time, theme and header intersection
+    2. Global scope varible
+    3. Hover styling
+    4. Static styling for themes
+    5. Intersection for body
+
+*/
 
 /** Change colors of the page when the evening begins and change back at the morning.
  * It is an automatic nightmode.
  */
 const theHour = new Date().getHours();
 
+/** Varible to set the time for darkmode */
+const darkmode = 18;
+
+/** Varible to set the time for daymode */
+const daymode = 11;
+
 /** Function to change between day- och darkmode at specific times */
 function changeTheme() {    
     
     //An if statement to rotate the day- and darkmode when the time is right
-    if (theHour <= 11 || theHour >= 18) {
+    if (theHour <= daymode || theHour >= darkmode) {
         darkMode()            
     }
     else {
@@ -45,7 +62,7 @@ function headerObserver() {
     if (window.scrollY == 0 || window.top == 0) {
         return;
     }
-    else if (theHour <= 11 || theHour >= 18) {
+    else if (theHour <= daymode || theHour >= darkmode) {
         darkModeHeader() 
     }
     else  {     
@@ -119,8 +136,7 @@ function dayModeHeader() {
 /** Varible to a new Intersection for "headerObserver" */
 const headerObserverTrigger = new IntersectionObserver(headerObserver, optionsHeaderObserver);
 
-// intersection what to intersect
-headerObserverTrigger.observe(getHeroSection);
+
 
 //
 //  VARIBLES FOR GLOBAL SCOPE
