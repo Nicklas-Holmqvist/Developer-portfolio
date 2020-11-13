@@ -270,9 +270,16 @@ nav {
     transition: all .5s ease;
 }
 
+
+/* class to open the mobile menu */
 .hamburger-open {
     left: 0;
-    width: 100%
+    width: 100%;
+}
+
+/* class to lock the scroll when in mobile-menu */
+.body-lock {
+    overflow: hidden;
 }
 
 .nav-mobile i {
@@ -294,7 +301,7 @@ nav {
 
 .hero-section {
     height: 60rem;
-    
+
     background-image: url(./img/hero-background.png);
     background-position: center;
     background-repeat: no-repeat;
@@ -302,6 +309,10 @@ nav {
     background-attachment: fixed;
 
     transition: background-image .5s ease;
+}
+
+.hero-container {
+    padding: 0 2rem;
 }
 
 .hero-text-container {
@@ -371,6 +382,9 @@ mark{
 
 .portfolio-img {
     border-radius: 8px;
+
+    margin: 0 2rem;
+
     overflow: hidden;
 
     box-shadow: 2px 3px 3px #55555511,
@@ -416,6 +430,12 @@ mark{
 
 .math-img {
     box-shadow: none!important;
+    text-align: center;
+}
+
+.math-img img {
+    height: 90%;
+    width: 90%;
 }
 
 .math-btn {

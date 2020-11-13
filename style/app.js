@@ -226,7 +226,7 @@ function hoverALinkUpplev() {
 /** Function to change the styling when mouseout the button on the "upplev skogen" section */
 function leaveALinkUpplev() {
     getUpplevBtn.style.color = "var(--darkgrey)";
-    getUpplevBtn.style.backgroundColor = "#FF9F1C";
+    getUpplevBtn.style.backgroundColor = "unset";
 }
 
 // Addeventlisteners to the hover effect for "simple addition" button
@@ -415,9 +415,10 @@ function changeMathday() {
     getMathText.style.color = "var(--darkgrey)";
 }
 
-/** Toggle function for the hamburger menu */
+/** Toggle function for the hamburger menu, puts the class "hamburger-open" on "nav-mobile" */
 function openHamburger() {
     openMenu.classList.toggle("hamburger-open"); 
+    changeBackground.classList.toggle("body-lock")
 }
 
 //
