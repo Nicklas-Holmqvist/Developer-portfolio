@@ -21,4 +21,9 @@ The more goodies, the more time it takes.
 I would love to make it easier and much cleaner in the future!
 
 ## Link to page
+
+To my own domain page
 [Link](https://www.nicklasholmqvist.se/test/portfolio/index.html)
+
+To my Github pages
+[Link](https://nicklas-holmqvist.github.io/my-portfolio)
