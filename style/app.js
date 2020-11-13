@@ -30,7 +30,7 @@ const theHour = new Date().getHours();
 const darkmode = 18;
 
 /** Varible to set the time for daymode */
-const daymode = 11;
+const daymode = 7;
 
 /** Function to change between day- och darkmode at specific times */
 function changeTheme() {    
