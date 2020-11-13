@@ -7,6 +7,7 @@ function main() {
     setInterval(changeTheme, 60000);
     changeTheme()
     initScrollBehaviour()
+    intersectionFunctions ()
 }
 
 /** Change colors of the page when the evening begins and change back at the morning.
@@ -18,7 +19,7 @@ const theHour = new Date().getHours();
 function changeTheme() {    
     
     //An if statement to rotate the day- and darkmode when the time is right
-    if (theHour <= 7 || theHour >= 18) {
+    if (theHour <= 11 || theHour >= 18) {
         darkMode()            
     }
     else {
@@ -44,7 +45,7 @@ function headerObserver() {
     if (window.scrollY == 0 || window.top == 0) {
         return;
     }
-    else if (theHour <= 7 || theHour >= 18) {
+    else if (theHour <= 11 || theHour >= 18) {
         darkModeHeader() 
     }
     else  {     
@@ -388,7 +389,6 @@ function btnDark() {
 /** Daymode styling for all the standard buttons */  
 function btnDay() {
  const getBtn = document.querySelectorAll(".portfolio-btn");
- console.log(getBtn);
 
  getBtn.forEach((e) => {
      e.style.color = "var(--white)";
@@ -438,6 +438,16 @@ function openHamburger() {
 // The header intersection is on the top in this file
 //
 
+/** Function for all observerfunctions */
+function intersectionFunctions () {    
+    whatMakesTrigger.observe(getWhatMakes);
+    portfolio1Trigger.observe(getPortfolio1);
+    portfolio2Trigger.observe(getPortfolio2);
+    portfolio3Trigger.observe(getPortfolio3);
+    getAboutMeTrigger.observe(getAboutMe);
+    getfooterTrigger.observe(getFooter);
+}
+
 /** Varible to get the what-makes section class */
 const getWhatMakes = document.querySelector('.what-makes');
 /** Varible to get the first part of the portfolio section class */
@@ -467,8 +477,6 @@ function whatMakesObserver () {
 /** Varible and a Interactionfunction for what-makes section */
 const whatMakesTrigger = new IntersectionObserver(whatMakesObserver, optionContentObserver);
 
-whatMakesTrigger.observe(getWhatMakes);
-
 /** Interaction function to trigger the animation of the first part of the portfolio section */
 function portfolio1Observer () {
     if (window.scrollY == 0) {
@@ -479,8 +487,6 @@ function portfolio1Observer () {
 
 /** Varible and a Interactionfunction for the first part in the portfolio section */
 const portfolio1Trigger = new IntersectionObserver(portfolio1Observer, optionContentObserver);
-
-portfolio1Trigger.observe(getPortfolio1);
 
 /** Interaction function to trigger the animation of the second part of the portfolio section */
 function portfolio2Observer () {
@@ -493,8 +499,6 @@ function portfolio2Observer () {
 /** Varible and a Interactionfunction for the second part in the portfolio section */
 const portfolio2Trigger = new IntersectionObserver(portfolio2Observer, optionContentObserver);
 
-portfolio2Trigger.observe(getPortfolio2);
-
 /** Interaction function to trigger the animation of the third part of the portfolio section */
 function portfolio3Observer () {
     if (window.scrollY == 0) {
@@ -503,10 +507,8 @@ function portfolio3Observer () {
     getPortfolio3.classList.add("animation-fadein")
 }
 
-/** Varible and a Interactionfunction for the second part in the portfolio section */
+/** Varible and a Interactionfunction for the third part in the portfolio section */
 const portfolio3Trigger = new IntersectionObserver(portfolio3Observer, optionContentObserver);
-
-portfolio3Trigger.observe(getPortfolio3);
 
 /** Interaction function to trigger the animation of the about-me section */
 function getAboutMeObserver () {
@@ -519,8 +521,6 @@ function getAboutMeObserver () {
 /** Varible and a Interactionfunction for the about-me section */
 const getAboutMeTrigger = new IntersectionObserver(getAboutMeObserver, optionContentObserver);
 
-getAboutMeTrigger.observe(getAboutMe);
-
 /** Interaction function to trigger the animation of the footer section */
 function getFooterObserver () {
     if (window.scrollY == 0) {
@@ -531,5 +531,3 @@ function getFooterObserver () {
 
 /** Varible and a Interactionfunction for the footer section */
 const getfooterTrigger = new IntersectionObserver(getFooterObserver, optionContentObserver);
-
-getfooterTrigger.observe(getFooter);
