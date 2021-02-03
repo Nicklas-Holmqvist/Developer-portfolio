@@ -1,8 +1,7 @@
 # Portfolio 1.0
-Laboration 2 - Javascript homework
 
 ## Description
-This is my portfolio and CV.
+This is my developer portfolio and CV that I build as an course submission in our javascript basic course.
 
 I have used html, css and javascript to make this portfolio as clean as I wanted for the time being.
 
@@ -23,7 +22,7 @@ I would love to make it easier and much cleaner in the future!
 ## Link to page
 
 To my own domain page
-[Link](https://www.nicklasholmqvist.se/test/portfolio/index.html)
+[Link](https://nicklasholmqvist.se/portfolio/utvecklare/index.html)
 
 To my Github pages
 [Link](https://nicklas-holmqvist.github.io/my-portfolio)
